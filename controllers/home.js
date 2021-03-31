@@ -1,6 +1,9 @@
 const router=require('express').Router()
-const homeRoute=require('./home')
-router.use('/',homeRoute)
+
+router.get('/',(req,res)=>{
+  res.render('homepage')  
+    
+})
 
 
 module.exports=router

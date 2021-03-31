@@ -1,0 +1,39 @@
+
+/*---------Main setup-------*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    
+    color:#333;
+}
+
+/*---------------------*/
+
+.chat-group,.users{
+    background-color: #f5f5f5;
+    display: flex;
+}
+.chat-group,.users,.live-chat{
+    height:86vh;
+}
+.chat{
+    display: flex;
+} 
+.chat-icon{
+    margin-top:-10px;
+} 
+.pulse{
+   margin-left:2rem;
+}
+.live-chat{
+    display:flex;
+}
+.create-group,.chat{
+align-self: flex-end;
+width:100%;
+}
+
+/*---------------------*/
