@@ -27,7 +27,7 @@ body {
 #room {
      padding: 6px 8px 6px 16px;
      text-decoration: none;
-     font-size: 25px;
+     font-size: 1.5em;
      color: #000000;
      display: block;     
      border-bottom: 1px solid rgb(34, 34, 34);
@@ -35,10 +35,14 @@ body {
      width: 75%;
 }
 
+#roomUser {
+     font-size: 0.5em;
+}
+
 #username {
      padding: 6px 8px 6px 16px;
      text-decoration: none;
-     font-size: 25px;
+     font-size: 1em;
      color: #000000;
      display: block;
      border-bottom: 1px solid rgb(34, 34, 34);
@@ -55,6 +59,11 @@ body {
      border-bottom: 2px solid rgb(34, 34, 34);
      padding-left: 20px;
      white-space: nowrap;
+}
+
+#roomTitle h2,
+#usernameTitle h2 {
+     font-weight: bold;
 }
 
 #usernameTitle {
@@ -96,7 +105,11 @@ body {
      background-color: rgb(49, 49, 49);
      color: white;
      margin-right: 0px;
-     
+     height:50px;
+}
+
+#topbar h2 {
+     font-size: 120%;
 }
 
 .navbar {
@@ -106,10 +119,6 @@ body {
 #chatrooms {
      max-width: 60%;
      margin: 0px;
-}
-
-#topbar {
-     height:50px;
 }
 
 .form-group {
@@ -124,4 +133,9 @@ body {
 
 .badge {
      float: right;
+}
+
+#input {
+     margin-bottom: 2%;
+     margin-top: 2%;
 }
