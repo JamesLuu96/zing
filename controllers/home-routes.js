@@ -20,13 +20,23 @@ router.get("/", (req, res) => {
 		],
 	})
 		.then((dbRoomData) => {
-			rooms = dbRoomData.map(x=>x.get({plain:true}))
-			res.render('homepage', {rooms})})
+			rooms = dbRoomData.map((x) => x.get({ plain: true }));
+			res.render("homepage", { rooms });
+		})
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
 		});
-})
+});
+
+router.get("/login", (req, res) => {
+	if (req.session.loggedIn) {
+		res.redirect("/");
+		return;
+	}
+
+	res.render("login");
+});
 
 // get single room
 router.get("/:id", (req, res) => {
@@ -51,22 +61,13 @@ router.get("/:id", (req, res) => {
 				res.status(404).json({ message: "No room found with this id" });
 				return;
 			}
-			const room = dbRoomData.get({plain:true}) 
-			res.render('chatroom1', room);
+			const room = dbRoomData.get({ plain: true });
+			res.render("chatroom1", room);
 		})
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
 		});
 });
-
-// router.get("/login", (req, res) => {
-// 	if (req.session.loggedIn) {
-// 		res.redirect("/");
-// 		return;
-// 	}
-
-// 	res.render("login");
-// });
 
 module.exports = router;

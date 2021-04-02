@@ -8,10 +8,10 @@
      <div class="row" id="roomTitle">
           <h2>Chat Rooms</h2>
      </div>
-     <div class="input-group mb-3" id="chatInput">
-          <input type="text" class="form-control" placeholder="New chat room" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-        </div>
+     <form class="input-group mb-3" id="chatInput">
+          <input type="text" class="room-name form-control" placeholder="New chat room" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+        </form>
         {{#each rooms}}
          <a href="/{{id}}"><div class="row" id="room">{{room_name}}<span class="badge badge-info pull-right">#</span><i class="far fa-user pull-right" id="roomicon"></i><div id="roomUser">{{user.username}}</div></div></a>
           {{/each}}
@@ -29,7 +29,7 @@
      </div>
 
 
-     <script src="./assets/js/script.js"></script>
+     <script src="/javascript/add-room.js"></script>
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
           integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
