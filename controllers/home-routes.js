@@ -19,12 +19,12 @@ router.get("/", (req, res) => {
 			},
 		],
 	})
-		.then((dbRoomData) => res.sendFile(__dirname, "../assets/html/index.html"))
+		.then((dbRoomData) => res.render('homepage', {dbRoomData}))
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
 		});
-});
+})
 
 // get single room
 router.get("/:id", (req, res) => {
