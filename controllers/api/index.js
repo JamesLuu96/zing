@@ -6,6 +6,6 @@ const typeRoutes = require("./type-routes");
 
 router.use("/users", userRoutes);
 router.use("/rooms", roomRoutes);
-router.use("/types", typeRoutes);
+// router.use("/types", typeRoutes);
 
 module.exports = router;

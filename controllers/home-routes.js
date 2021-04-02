@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Room, User } = require("../models");
+const { Room, User, Type } = require("../models");
 const path = require("path");
 
 // get all rooms for homepage

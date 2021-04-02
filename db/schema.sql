@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS chat_db;
+
+CREATE DATABASE chat_db;
