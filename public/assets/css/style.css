@@ -1,19 +1,25 @@
 body {
      font-family: "Lato", sans-serif;
+     overflow-x: hidden;
+     margin:0;
+     padding:0;
+     box-sizing: border-box;
 }
-
+a:hover{
+     text-decoration: none;
+}
 .sidenav {
-     height: 100%;
+   
      width: 25%;
      position: fixed;
      z-index: 1;
      top: 0;
      right: 0;
      background-color: white;
-     overflow-x: hidden;
+     
      padding-top: 0px;
      margin-top: 50px;
-     border-left: 2px solid rgb(34, 34, 34);
+     border-bottom: 1px solid #f2f2f2;
 }
 
 .sidenav p {
@@ -30,13 +36,14 @@ body {
      font-size: 1.5em;
      color: #000000;
      display: block;     
-     border-bottom: 1px solid rgb(34, 34, 34);
+     border-bottom: 1px solid #f2f2f2;
      padding-left: 20px;
      width: 76%;
 }
 
 #roomUser {
      font-size: 0.5em;
+    
 }
 
 #username {
@@ -45,25 +52,20 @@ body {
      font-size: .8em;
      color: #000000;
      display: block;
-     border-bottom: 1px solid rgb(34, 34, 34);
      padding-left: 20px;
+     border-bottom: 1px solid #f2f2f2;
+     
 }
 
 #roomTitle {
      padding: 6px 8px 6px 16px;
      text-decoration: none;
-     font-size: 25px;
+     font-size: 20px;
      color: #000000;
      display: block;
-     border-top: 1px solid #000000;
-     border-bottom: 2px solid rgb(34, 34, 34);
+    margin-left:10rem;
      padding-left: 20px;
      white-space: nowrap;
-}
-
-#roomTitle h2,
-#usernameTitle h2 {
-     font-weight: bold;
 }
 
 #usernameTitle {
@@ -72,8 +74,7 @@ body {
      font-size: 25px;
      color: #000000;
      display: block;
-     border-top: 1px solid #000000;
-     border-bottom: 2px solid rgb(34, 34, 34);
+     border-bottom: 1px solid #f2f2f2;
      padding-left: 20px;
      white-space: nowrap;
 }
@@ -132,7 +133,6 @@ body {
 #chatInput {
      max-width: 75%;
      margin-top: 1%;
-     border-bottom:1px solid rgb(34, 34, 34);
      padding-bottom: 1%;
      
 

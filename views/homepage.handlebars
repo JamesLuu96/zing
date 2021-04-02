@@ -1,32 +1,44 @@
+<!-- Top Bar -->
+<nav class="navbar navbar-expand-lg navbar-light" id="topbar">
+     <h2>CHAT</h2>
+</nav>
 
-     <!-- Top Bar -->
-     <nav class="navbar navbar-expand-lg navbar-light" id="topbar">
-          <h2>CHAT</h2>
-     </nav>
+<!-- Left Bar -->
+<div class="row" id="roomTitle">
+     <h2 class="ml-4">Chat Rooms</h2>
+</div>
 
-     <!-- Left Bar -->
-     <div class="row" id="roomTitle">
-          <h2>Chat Rooms</h2>
-     </div>
-     <form class="input-group mb-3" id="chatInput">
-          <input type="text" class="room-name form-control" placeholder="New chat room" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
-        </form>
-        {{#each rooms}}
-         <a href="/{{id}}"><div class="row" id="room">{{room_name}}<span class="badge badge-info pull-right">#</span><i class="far fa-user pull-right" id="roomicon"></i><div id="roomUser">{{user.username}}</div></div></a>
-          {{/each}}
+<div class="container">
+     <div class="row">
+          <div class="col-sm-12">
+               <form class="input-group mb-3" id="chatInput">
+                    <input type="text" class="room-name form-control" placeholder="New chat room"
+                         aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary ml-2" type="submit" id="button-addon2">Create</button>
+               </form>
+               {{#each rooms}}
+               <a href="/{{id}}">
+                    <div class="row" id="room">{{room_name}}<span class="badge badge-info pull-right">#</span><i
+                              class="far fa-user pull-right mr-2" id="roomicon"></i>
+                         <div id="roomUser">{{user.username}}</div>
+                    </div>
+               </a>
+               {{/each}}
 
-
-     <!-- Right Bar -->
-     <div class="sidenav">
-
-          <div class="row" id="usernameTitle">
-               <h2>Online Users</h2>
           </div>
-          {{#each rooms}}
-          <div class="row" id="username"><i class="far fa-user"></i> {{user.username}}</div>
-          {{/each}}
+          <div class="col-sm-4">
+               <div class="sidenav">
+
+                    <div class="" id="usernameTitle">
+                         <h2>Online Users</h2>
+                    </div>
+                    {{#each rooms}}
+                    <div class="" id="username"><i class="far fa-user"></i> {{user.username}}</div>
+                    {{/each}}
+               </div>
+          </div>
      </div>
+
 
 
      <script src="/javascript/add-room.js"></script>
