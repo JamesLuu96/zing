@@ -18,9 +18,9 @@
                </form>
                {{#each rooms}}
                <a href="/{{id}}">
-                    <div class="row" id="room">{{room_name}}<span class="badge badge-info pull-right">#</span><i
+                    <div class="row" id="room">{{room_name}}<span
+                              class="badge badge-info pull-right roomUser">{{user.username.length}}</span><i
                               class="far fa-user pull-right mr-2" id="roomicon"></i>
-                         <div id="roomUser">{{user.username}}</div>
                     </div>
                </a>
                {{/each}}
@@ -28,12 +28,15 @@
           </div>
           <div class="col-sm-4">
                <div class="sidenav">
-
                     <div class="" id="usernameTitle">
                          <h2>Online Users</h2>
                     </div>
                     {{#each rooms}}
-                    <div class="" id="username"><i class="far fa-user"></i> {{user.username}}</div>
+                    <div class="d-flex justify-content-between pr-4" id="username">
+                         <span><i class="fas fa-user-secret mr-3"></i>{{user.username}} </span>
+                         <span><i class="fas fa-circle online-users"></i></span>
+                    </div>
+
                     {{/each}}
                </div>
           </div>

@@ -33,7 +33,7 @@ a:hover{
 #room {
      padding: 6px 8px 6px 16px;
      text-decoration: none;
-     font-size: 1.5em;
+     font-size: 1.2rem;
      color: #000000;
      display: block;     
      border-bottom: 1px solid #f2f2f2;
@@ -45,7 +45,10 @@ a:hover{
      font-size: 0.5em;
     
 }
-
+.online-users{
+  font-size:10px;
+     color:rgb(34, 224, 34)
+}
 #username {
      padding: 10px 8px 10px 16px;
      text-decoration: none;
