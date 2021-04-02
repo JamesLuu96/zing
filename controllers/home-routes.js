@@ -19,7 +19,9 @@ router.get("/", (req, res) => {
 			},
 		],
 	})
-		.then((dbRoomData) => res.render('homepage', {dbRoomData}))
+		.then((dbRoomData) => {
+			rooms = dbRoomData.map(x=>x.get({plain:true}))
+			res.render('homepage', {rooms})})
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
@@ -49,7 +51,8 @@ router.get("/:id", (req, res) => {
 				res.status(404).json({ message: "No room found with this id" });
 				return;
 			}
-			res.json(dbRoomData);
+			const room = dbRoomData.get({plain:true}) 
+			res.render('chatroom1', room);
 		})
 		.catch((err) => {
 			console.log(err);
