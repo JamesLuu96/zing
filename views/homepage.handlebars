@@ -18,9 +18,12 @@
                </form>
                {{#each rooms}}
                <a href="/{{id}}">
-                    <div class="row" id="room">{{room_name}}<span
-                              class="badge badge-info pull-right roomUser">{{user.username.length}}</span><i
-                              class="far fa-user pull-right mr-2" id="roomicon"></i>
+
+                    <div class="row" id="room">
+                         <span>{{user.username}}</span>
+                         {{room_name}}<span class="badge badge-info pull-right roomUser">{{getRoomUsers id}}</span>
+                         <i class="far fa-user pull-right mr-2" id="roomicon"></i>
+
                     </div>
                </a>
                {{/each}}

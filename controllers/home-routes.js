@@ -2,6 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Room, User, Type } = require("../models");
 const path = require("path");
+const {users} = require("../utils")
 
 // get all rooms for homepage
 router.get("/", (req, res) => {
@@ -21,7 +22,7 @@ router.get("/", (req, res) => {
 	})
 		.then((dbRoomData) => {
 			rooms = dbRoomData.map((x) => x.get({ plain: true }));
-			res.render("homepage", { rooms });
+			res.render("homepage", { rooms, users: users });
 		})
 		.catch((err) => {
 			console.log(err);
