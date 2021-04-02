@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Room } = require("../models");
+const { Room, User } = require("../models");
 const path = require("path");
 
 // get all rooms for homepage
@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 			},
 		],
 	})
-		.then((dbRoomData) => res.sendFile(__dirname, dbRoomData))
+		.then((dbRoomData) => res.sendFile(__dirname, "../assets/html/index.html"))
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
