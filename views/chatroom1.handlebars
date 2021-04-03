@@ -1,27 +1,46 @@
- <link rel="stylesheet" href="/assets/css/chatroom1.css">
-     <nav class="navbar navbar-expand-lg navbar-light" id="topbar">
-          <h2>CHAT ROOM {{id}}</h2>
-     </nav>
+<link rel="stylesheet" href="/assets/css/chatroom1.css">
+<nav class="navbar navbar-expand-lg navbar-light" id="topbar">
+     <h2>CHAT ROOM {{id}}</h2>
+     <span class="active-room"></span>
+</nav>
 
-     <div class="container">
-          <div class="row">
-               <div class="col-12" id="chatBox">
-                    <ul id = chatList style="list-style-type:none">
-                         <li></li>
-                    </ul>
+<div class="row wrapper">
+     {{!-- col-4 col-sm-3 col-md-2 --}}
+     <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3" id="room-users">
+          <h2>users</h2>
+          <ul>
+               <li>
+                    <i class="far fa-user pull-right mr-2" id=""></i>Helen
+               </li>
+               <li>
+                    <i class="far fa-user pull-right mr-2" id=""></i> fasika
+               </li>
+          </ul>
+     </div>
+     {{!-- col-8 col-sm-6 col-md-4 --}}
+     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7">
+          <div class="">
+               <div class="row">
+                    <div class="col-12" id="chatBox">
+                         <ul id=chatList style="list-style-type:none">
+                              <li></li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+          <div class="">
+               <div class="input-group mb-3">
+                    <input type="text" id="chatInput" class="form-control" placeholder="New chat room"
+                         aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <form>
+                         <label for="image-upload"><i class="fas fa-camera" id="insert-image"></i></label>
+                         <input type="file" id="image-upload">
+                    </form>
+                    {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
                </div>
           </div>
      </div>
+</div>
 
-
-
-     <div class=container>
-          <div class="input-group mb-3">
-               <input type="text" id="chatInput" class="form-control" placeholder="New chat room"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
-               <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button>
-          </div>
-     </div>
-
-
-<script src="../assets/javascript/chatroom1.js"></script>
+<script src="/javascript/chatroom1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
