@@ -1,6 +1,8 @@
 var chatBox = document.getElementById("chatBox")
 const {username,room}=JSON.parse(sessionStorage.getItem("userInfo"))
 
+const currentRoom=document.querySelector('.active-room') //show the current room
+
 var socket=io();
 
 socket.emit('joinRoom',{username,room}) 
@@ -42,6 +44,10 @@ function renderUserMessage(message){
 // node.appendChild(textnode);                              // Append the text to <li>
 // document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
 
-
+function displayRoomName(room){
+     currentRoom.innerHTML=room
+ }
+ 
+ 
 
 document.getElementById("send-chat").addEventListener("click",sendMessage)
