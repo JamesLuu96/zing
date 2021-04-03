@@ -2,6 +2,7 @@ var chatBox = document.getElementById("chatBox")
 const {username,room}=JSON.parse(sessionStorage.getItem("userInfo"))
 
 const currentRoom=document.querySelector('.active-room') //show the current room
+const usersDiv=document.querySelector('.users') //display current online users in a room
 
 var socket=io();
 
@@ -48,6 +49,9 @@ function displayRoomName(room){
      currentRoom.innerHTML=room
  }
  
- 
+ function displayUsers(users){
+     usersDiv.textContent=`${users.map(user=>`<li>${user.username}</li>`).join('')}`;
+ }
+
 
 document.getElementById("send-chat").addEventListener("click",sendMessage)
