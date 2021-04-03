@@ -45,8 +45,9 @@ a:hover{
 
 #roomUser {
      font-size: 0.5em;
-    
+     
 }
+
 .online-users{
   font-size:10px;
      color:rgb(34, 224, 34)
@@ -62,7 +63,9 @@ a:hover{
      border-bottom: 1px solid #f2f2f2;
      
 }
-
+.username-badge{
+     width:6rem;
+}
 #roomTitle {
      padding: 6px 8px 6px 16px;
      text-decoration: none;
@@ -132,9 +135,7 @@ a:hover{
      float: right;
 }
 
-.badge {
-     float: right;
-}
+
 
 #chatInput {
      max-width: 75%;

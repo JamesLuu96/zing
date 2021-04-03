@@ -13,7 +13,7 @@
 #room-users{
      margin:3.2% 0 0 2.5%;
      border:2px solid #fff;
-     height:70vh;
+     height:75vh;
 }
 #room-users li{
      border-bottom: 2px solid #fff;
@@ -22,12 +22,12 @@
 }
 #chatBox {
      background-color:#fff;
-     height: 70vh;
+     height: 75vh;
     margin:3rem 5% 0 0;
      
 }
 .input-group{
-     margin:-45px -20px 0 -19px;
+     margin:-35px -20px 0 -19px;
      width:103%;
      border-right:0;
      position: relative;

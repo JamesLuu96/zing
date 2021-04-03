@@ -3,12 +3,10 @@
      <h2>CHAT ROOM {{id}}</h2>
      <span class="active-room"></span>
 </nav>
-{{!--
-<div class="span6 ml-4">
-     <textarea id="emojionearea1">Default :smile:</textarea>
-</div> --}}
+
 <div class="row wrapper">
-     <div class="col-2" id="room-users">
+     {{!-- col-4 col-sm-3 col-md-2 --}}
+     <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3" id="room-users">
           <h2>users</h2>
           <ul>
                <li>
@@ -19,7 +17,8 @@
                </li>
           </ul>
      </div>
-     <div class="col-7">
+     {{!-- col-8 col-sm-6 col-md-4 --}}
+     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7">
           <div class="">
                <div class="row">
                     <div class="col-12" id="chatBox">
@@ -42,5 +41,6 @@
           </div>
      </div>
 </div>
+
 <script src="/javascript/chatroom1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
