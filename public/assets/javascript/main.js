@@ -22,10 +22,10 @@ socket.on('roomUsers', ({ room, users }) => {
 // Message from server
 socket.on('message', message => {
     console.log(message)
-    outputMessage(message);
+    // outputMessage(message);
 
     // Scroll down
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    // chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
 // Message submit
