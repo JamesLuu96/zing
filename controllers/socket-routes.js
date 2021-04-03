@@ -9,3 +9,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+// Come up with a better name once we have a proper title for the site
+const botName = 'ChatAdmin';
+
+
+
