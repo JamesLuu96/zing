@@ -4,6 +4,8 @@ body {
      margin:0;
      padding:0;
      box-sizing: border-box;
+  
+
 }
 a:hover{
      text-decoration: none;
@@ -49,6 +51,7 @@ a:hover{
   font-size:10px;
      color:rgb(34, 224, 34)
 }
+
 #username {
      padding: 10px 8px 10px 16px;
      text-decoration: none;

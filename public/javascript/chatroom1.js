@@ -4,6 +4,9 @@ const {username,room}=JSON.parse(sessionStorage.getItem("userInfo"))
 const currentRoom=document.querySelector('.active-room') //show the current room
 const usersDiv=document.querySelector('.users') //display current online users in a room
 
+const chatContainer=document.querySelector('#chatBox')
+const roomUsers=document.querySelector('#room-users')
+
 var socket=io();
 
 socket.emit('joinRoom',{username,room}) 
@@ -34,7 +37,7 @@ function sendMessage () {
 
 function renderUserMessage(message){
      const textNode=document.createElement('div')
-     message.classList.add('message')
+     // message.classList.add('message')
 
      textNode.textContent=`${message.text} ${message.time},${message.username}`
      chatContainer.appendChild(textNode)
@@ -50,7 +53,7 @@ function displayRoomName(room){
  }
  
  function displayUsers(users){
-     usersDiv.textContent=`${users.map(user=>`<li>${user.username}</li>`).join('')}`;
+     roomUsers.textContent=`${users.map(user=>`<li>${user.username}</li>`).join('')}`;
  }
 
 
