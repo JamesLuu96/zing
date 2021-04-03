@@ -10,22 +10,37 @@ socket.on('roomUsers',({room,users})=>{
      displayUsers(users)
  })
  
+ socket.on('message',message=>{
+     renderMessage(message)
+     
+ })
+ 
 function sendMessage () {
      var message = document.getElementById("chatInput").value;
      // alert(x);
      // chatBox.innerHTML = x;
-
-     var node = document.createElement("LI");                 // Create a <li> node
-     var textnode = document.createTextNode(message);         // Create a text node
-     node.appendChild(textnode);                              // Append the text to <li>
-     document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
+     if(message){
+          socket.emit('chatMessage',message)  
+         }
+         
+     // var node = document.createElement("LI");                 // Create a <li> node
+     // var textnode = document.createTextNode(message);         // Create a text node
+     // node.appendChild(textnode);                              // Append the text to <li>
+     // document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
 };
 
+function renderUserMessage(message){
+     const textNode=document.createElement('div')
+     message.classList.add('message')
 
-var node = document.createElement("LI");                 // Create a <li> node
-var textnode = document.createTextNode(message);         // Create a text node
-node.appendChild(textnode);                              // Append the text to <li>
-document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
+     textNode.textContent=`${message.text} ${message.time},${message.username}`
+     chatContainer.appendChild(textNode)
+     
+}
+// var node = document.createElement("LI");                 // Create a <li> node
+// var textnode = document.createTextNode(message);         // Create a text node
+// node.appendChild(textnode);                              // Append the text to <li>
+// document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
 
 
 
