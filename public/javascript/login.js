@@ -1,3 +1,6 @@
+
+ myStorage = window.sessionStorage;
+ 
 function openTab(tabName) {
 	var i;
 	var x = document.getElementsByClassName("form");
@@ -24,6 +27,7 @@ async function loginFormHandler(event) {
 		});
 
 		if (response.ok) {
+			sessionStorage.setItem('userInfo', JSON.stringify(data));
 			document.location.replace("/dashboard/");
 		} else {
 			alert(response.statusText);
