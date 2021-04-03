@@ -1,5 +1,9 @@
+$(function() {
+
 var chatBox = document.getElementById("chatBox")
-const {username,room}=JSON.parse(sessionStorage.getItem("userInfo"))
+// const {username,room}=JSON.parse(sessionStorage.getItem("userInfo"))
+const btnSend=document.getElementById("send-chat")
+var socket=io();
 
 const currentRoom=document.querySelector('.active-room') //show the current room
 const usersDiv=document.querySelector('.users') //display current online users in a room
@@ -7,47 +11,44 @@ const usersDiv=document.querySelector('.users') //display current online users i
 const chatContainer=document.querySelector('#chatBox')
 const roomUsers=document.querySelector('#room-users')
 
-var socket=io();
-
+//add emoji to the input panel
+     $("#chatInput").emojioneArea({
+      tonesStyle: "bullet",
+       searchPlaceholder: "Search",
+       searchPosition: "top",
+     
+     });
+    
+//send username and room to the server 
 socket.emit('joinRoom',{username,room}) 
 
+//accept room and server from server
 socket.on('roomUsers',({room,users})=>{
      displayRoomName(room);
      displayUsers(users)
  })
- 
+ //accept message from server and render to the dom
  socket.on('message',message=>{
-     renderMessage(message)
+     renderUserMessage(message)
      
  })
  
+ //send message
 function sendMessage () {
      var message = document.getElementById("chatInput").value;
-     // alert(x);
-     // chatBox.innerHTML = x;
      if(message){
           socket.emit('chatMessage',message)  
          }
-         
-     // var node = document.createElement("LI");                 // Create a <li> node
-     // var textnode = document.createTextNode(message);         // Create a text node
-     // node.appendChild(textnode);                              // Append the text to <li>
-     // document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
 };
-
+//render message to the dom
 function renderUserMessage(message){
      const textNode=document.createElement('div')
-     // message.classList.add('message')
-
      textNode.textContent=`${message.text} ${message.time},${message.username}`
      chatContainer.appendChild(textNode)
      
 }
-// var node = document.createElement("LI");                 // Create a <li> node
-// var textnode = document.createTextNode(message);         // Create a text node
-// node.appendChild(textnode);                              // Append the text to <li>
-// document.getElementById("chatList").appendChild(node);     // Append <li> to <ul> with id="myList"
 
+//display room name 
 function displayRoomName(room){
      currentRoom.innerHTML=room
  }
@@ -56,5 +57,6 @@ function displayRoomName(room){
      roomUsers.textContent=`${users.map(user=>`<li>${user.username}</li>`).join('')}`;
  }
 
-
-document.getElementById("send-chat").addEventListener("onchange",sendMessage)
+//Listen event when a user type on the input 
+ btnSend.addEventListener("onchange",sendMessage)
+})
