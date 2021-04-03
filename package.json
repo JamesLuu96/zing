@@ -1,21 +1,34 @@
 {
-  "name": "socket.io-test_2",
+  "name": "project-2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "node server.js",
+    "nodemon": "nodemon",
+    "seeds": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesLuu96/project-2.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "moment": "^2.29.1",
-    "socket.io": "^4.0.1"
+  "bugs": {
+    "url": "https://github.com/JamesLuu96/project-2/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
+  "homepage": "https://github.com/JamesLuu96/project-2#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2"
   },
   "description": ""
 }
