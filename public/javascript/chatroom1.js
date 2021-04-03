@@ -57,4 +57,4 @@ function displayRoomName(room){
  }
 
 
-document.getElementById("send-chat").addEventListener("click",sendMessage)
+document.getElementById("send-chat").addEventListener("onchange",sendMessage)
