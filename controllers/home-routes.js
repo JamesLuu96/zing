@@ -5,6 +5,11 @@ const path = require("path");
 const {users} = require("../utils")
 
 // get all rooms for homepage
+
+router.get("/login", (req, res) => {
+	res.render("login");
+});
+
 router.get("/", (req, res) => {
 	console.log("======================");
 	Room.findAll({
@@ -30,14 +35,7 @@ router.get("/", (req, res) => {
 		});
 });
 
-router.get("/login", (req, res) => {
-	if (req.session.loggedIn) {
-		res.redirect("/");
-		return;
-	}
 
-	res.render("login");
-});
 
 // get single room
 router.get("/:id", (req, res) => {
