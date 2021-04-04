@@ -63,7 +63,7 @@ router.get("/:id", (req, res) => {
 				return;
 			}
 			const room = dbRoomData.get({ plain: true });
-			res.render("chatroom1", room);
+			res.render("chatroom", room);
 		})
 		.catch((err) => {
 			console.log(err);
