@@ -1,9 +1,7 @@
 body {
      font-family: "Lato", sans-serif;
+     overflow:auto;
      overflow-x: hidden;
-     margin:0;
-     padding:0;
-     box-sizing: border-box;
   
 
 }
@@ -11,16 +9,15 @@ a:hover{
      text-decoration: none;
 }
 .sidenav {
-   
-     width: 25%;
+     width: 15%;
      position: fixed;
      z-index: 1;
      top: 0;
-     right: 0;
-     background-color: white;
-     
+     right: 5%;
+     height:100vh;
      padding-top: 0px;
      margin-top: 50px;
+     overflow:auto;
      border-bottom: 1px solid #f2f2f2;
 }
 
