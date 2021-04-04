@@ -1,6 +1,7 @@
 const router = require("express").Router();
+const nodemon = require("nodemon");
 const { User, Room } = require("../../models");
-
+const withAuth=require('../../utils/auth');
 
 router.post("/login", (req, res) => {
 	User.findOne({
@@ -43,11 +44,7 @@ router.post("/logout", (req, res) => {
 
 
 // get all users
-router.get("/", (req, res) => {
-	if(!req.session.loggedIn){
-		res.render('login')
-		return;
-	}
+router.get("/", withAuth, (req, res) => {
 	User.findAll({
 		attributes: { exclude: ["password"] },
 	})

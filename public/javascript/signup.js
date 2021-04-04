@@ -21,9 +21,11 @@ async function signupFormHandler(event) {
 		if (response.ok) {
 			document.location.replace("/");
 		} else {
-			alert(response.statusText);
+			document.location.reload()
 		}
 	}
 }
 
 document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);
+
+
