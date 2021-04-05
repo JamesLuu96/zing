@@ -46,3 +46,22 @@ socket.on('leaveRoom', user => {
 })
 
 
+async function chatHistory(message){
+  let room_id = getRoomId()
+ const response = await fetch("/api/chats", {
+    method: "POST",
+    body: JSON.stringify({ room_id, user_id,message}),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.ok) {
+    console.log("")
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+
+
