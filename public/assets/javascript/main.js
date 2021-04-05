@@ -65,3 +65,24 @@ async function chatHistory(message){
 
 
 
+
+  //fetch and render the data when the page reloads 
+  if(window.performance){
+    let room_id = getRoomId()
+     fetch(`/api/chats/${room_id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then(data=>{
+          return data.json()
+      }).then(data=>{
+        console.log(data)
+          const newData=data.filter(item=>item.room_id===3)
+          renderData(newData)
+       
+      }) 
+    
+ }
+
+
