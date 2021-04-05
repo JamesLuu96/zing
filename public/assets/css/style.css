@@ -12,7 +12,7 @@ body {
      background-color: white;
      overflow-x: hidden;
      padding-top: 0px;
-     margin-top: 50px;
+     /* margin-top: 50px; */
      border-left: 2px solid rgb(49, 49, 49);
 }
 
@@ -32,7 +32,7 @@ body {
      display: block;     
      border-bottom: 1px solid rgb(34, 34, 34);
      padding-left: 20px;
-     width: 76%;
+     width: 79%;
 }
 
 #roomUser {
@@ -64,6 +64,16 @@ body {
 #roomTitle h2,
 #usernameTitle h2 {
      font-weight: bold;
+}
+
+#chatInput {
+     width: 78%;
+     margin-top: 1%;
+     border-bottom:1px solid rgb(34, 34, 34);
+     padding-bottom: 1%;
+     /* margin-left: 1%; */
+     
+
 }
 
 #usernameTitle {
@@ -100,6 +110,25 @@ body {
      }
 }
 
+@media screen and (max-width: 768px) {
+     .sidenav {
+          padding-top: 15px;
+          display: none;
+     }
+
+     .sidenav a {
+          font-size: 18px;
+     }
+
+     #room {
+          width: auto;
+     }
+
+     #chatInput {
+          width: auto;
+     }
+}
+
 #topbar {
      min-width:100%;
      background-color: rgb(49, 49, 49);
@@ -129,14 +158,7 @@ body {
      float: right;
 }
 
-#chatInput {
-     max-width: 75%;
-     margin-top: 1%;
-     border-bottom:1px solid rgb(34, 34, 34);
-     padding-bottom: 1%;
-     
 
-}
 
 #button-addon2 {
      background-color: rgb(74, 143, 255);
@@ -146,11 +168,19 @@ body {
 
 .form-control {
      margin-bottom: 2%;
-     
+     margin-left: 2%;     
 }
 
 #topBlock {
      height: 50px;
      background-color: rgb(49, 49, 49);
      border-left: none;
+}
+
+.badge {
+     margin-right: 5%;
+}
+
+.btn {
+     margin-right: 8%;
 }
