@@ -41,6 +41,7 @@ function outputMessage(message) {
     list.textContent = message
     //   messages.push(message)
     chatList.append(list)
+    feedback.innerHTML = "";
 }
 
 //join room
