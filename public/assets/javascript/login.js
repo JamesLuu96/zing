@@ -24,14 +24,20 @@ async function loginFormHandler(event) {
 				password,
 			}),
 			headers: { "Content-Type": "application/json" },
-		});
+		}).then(data=>{
+			return data.json()
+		
+			// document.location.replace("/");
+		}).then(data=>{
+	  	sessionStorage.setItem('userInfo', JSON.stringify({username:data.user.username,user_id:data.user.id}));
+		  document.location.replace("/");
+		})
 
-		if (response.ok) {
-			// sessionStorage.setItem('userInfo', JSON.stringify(data));
-			document.location.replace("/");
-		} else {
-			document.location.reload()
-		}
+		// if (response.ok) {
+		// 	
+		// } else {
+		// 	document.location.reload()
+		// }
 	}
 }
 

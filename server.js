@@ -43,31 +43,32 @@ app.set('view engine', 'handlebars');
 
 // socket.handshake.session
 io.on('connection', socket => {
-    socket.on('joinRoom', (roomId)=>{
-        const user = userJoin(socket.id,'timmy',roomId)
-        socket.join(roomId)
+    socket.on('joinRoom', (data)=>{
+        const user = userJoin(socket.id,data.username,data.roomId)
+        
+        socket.join(data.roomId)
 
-        socket.to(roomId).emit('joinRoom', user)
+        socket.to(data.roomId).emit('joinRoom', user)
 
         socket.emit('message', "You entered the room.")
         console.log('joined')
 
-        socket.broadcast.to(roomId).emit('message', 'Someone entered the room.')
+        socket.broadcast.to(data.roomId).emit('message', `${data.username} entered the room.`)
 
         socket.on('chatMessage', (message)=>{
-            io.to(roomId).emit('message', message)
+            console.log(message ,"this is new message")
+         io.to(data.roomId).emit('message', message)
         })
 
 
         socket.on('disconnect', ()=>{
-            io.to(roomId).emit('message', 'Someone left the room.')
-            io.to(roomId).emit('leaveRoom', user)
+            io.to(data.roomId).emit('message', 'Someone left the room.')
+            io.to(data.roomId).emit('leaveRoom', user)
             console.log('left')
         })
         
     })
 })
-
 
 sequelize.sync({force: false})
 .then(()=>{
