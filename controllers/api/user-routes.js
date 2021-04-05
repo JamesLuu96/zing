@@ -42,6 +42,7 @@ router.post("/logout", (req, res) => {
 	} else {
 		res.status(404).end();
 	}
+	console.log(req.session.loggedIn)
 });
 
 
@@ -93,7 +94,7 @@ router.post("/", (req, res) => {
 				req.session.user_id = dbUserData.id;
 				req.session.username = dbUserData.username;
 				req.session.loggedIn = true;
-
+   console.log("user created")
 				res.json(dbUserData);
 			});
 		})

@@ -76,10 +76,8 @@ async function chatHistory(message) {
 if (window.performance) {
     let room_id = getRoomId()
     fetchChatHistory(room_id)
-    // deleteOldHistory(room_id)
+    deleteOldHistory(room_id)
 }
-
-
  function fetchChatHistory(room_id){
  fetch(`/api/chats/${room_id}`, {
     method: "GET",
@@ -92,20 +90,20 @@ if (window.performance) {
   console.log(data)
   console.log(room_id)
     // let newData = data.filter(item => item.room_id === room_id)
-    // renderData(newData)
+    renderData(data)
 })
 }
 
-// function deleteOldHistory(room_id){
-//   fetch(`/api/chats/${room_id}`,{
-//     method: "DELETE",
-//     headers: {
-//         "Content-Type": "application/json",
-//     },
-//   }).then(data=>{
-//     console.log(data)
-//   })
-// }
+function deleteOldHistory(room_id){
+  fetch(`/api/chats/${room_id}`,{
+    method: "DELETE",
+    headers: {
+        "Content-Type": "application/json",
+    },
+  }).then(data=>{
+    console.log(data)
+  })
+}
 
 
 //get room id 

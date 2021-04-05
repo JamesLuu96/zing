@@ -2,8 +2,8 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const {Chat, User} = require("../../models");
 const withAuth = require("../../utils/auth");
-var dateformat = require('dateformat');
-
+const dateFormat = require('dateformat');
+const {Op} = require('sequelize')
 // get all chat
 router.post("/", (req, res) => {
     console.log(req.body, "hello")
@@ -23,18 +23,15 @@ router.post("/", (req, res) => {
 });
 
 //find chat
-
 router.get("/:id", withAuth, (req, res) => {
     Chat.findAll({
-    //    attributes:[
-    //         [sequelize.literal(`(select username, message, c.created_at from user as u inner join chat as c on c.room_id =${req.params.id};)`), 'messages']]
-        attributes:[
-            "created_at"
-        ],
-        include:{
-         model:User,
-         attributes:['username']   
-        }
+        where:{
+            room_id:req.params.id
+        },
+        include:[{
+            model:User,
+            attributes:["username"]
+        }]
 })
         .then((dbRoomData) => {
             if (!dbRoomData) {
@@ -52,16 +49,18 @@ router.get("/:id", withAuth, (req, res) => {
 });
 //delete old chats
 router.delete("/:id", (req, res) => {
+    // 2021-04-06 21:38:37
     // let now=new Date()
-// dateFormat(date, "dddd, mmmm dS, yyyy");
+    // now=dateFormat(now,"yyyy-mm-dd hh:MM:ss")
     // console.log(now)
+
 	Chat.destroy({
 		where: {
-		 room_id:req.params.id
-		},
-        // attributes:[
-        // [sequelize.literal(`(DELETE FROM chat WHERE createdAt <=${now})`)]
-        // ]
+		 room_id:req.params.id,
+         created_at: {
+             [Op.lt]: new Date()
+         }
+		}
 	}).then((dbUserData) => {
 			if (!dbUserData) {
 				res.status(404).json({ message: "No user found with this id" });
