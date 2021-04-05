@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/assets/css/chatroom1.css">
+<nav class="navbar navbar-expand-lg navbar-light" id="topbar">
+     <h2 class="chat-room-title" data-id="{{id}}">CHAT ROOM {{id}}</h2>
+     <span class="active-room"></span>
+</nav>
+
+<div class="row wrapper">
+     {{!-- col-4 col-sm-3 col-md-2 --}}
+     <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3" id="room-users">
+          <h2>users</h2>
+          <ul>
+               <li>
+                    <i class="far fa-user pull-right mr-2" id=""></i>Helen
+               </li>
+               <li>
+                    <i class="far fa-user pull-right mr-2" id=""></i>fasika
+               </li>
+          </ul>
+     </div>
+     {{!-- col-8 col-sm-6 col-md-4 --}}
+     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7">
+          <div class="">
+               <div class="row">
+                    <div class="col-12" id="chatBox">
+                         <ul id="chatList" style="list-style-type:none">
+                              <li></li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+          <div class="">
+               <div class="input-group mb-3">
+                    <form class="chat-form">
+                    <input type="text" id="chatInput" class="form-control" placeholder="Enter Message Here"
+                         aria-label="Recipient's username" aria-describedby="button-addon2">
+                         <button type="submit">Send</button>
+                         <label for="image-upload"><i class="fas fa-camera" id="insert-image"></i></label>
+                         <input type="file" id="image-upload">
+                    </form>
+                    {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
+               </div>
+          </div>
+     </div>
+</div>
+
+<script
+     src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+     integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+     crossorigin="anonymous"
+></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/javascript/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
