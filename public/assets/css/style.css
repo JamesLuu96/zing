@@ -13,7 +13,7 @@ body {
      overflow-x: hidden;
      padding-top: 0px;
      margin-top: 50px;
-     border-left: 2px solid rgb(34, 34, 34);
+     border-left: 2px solid rgb(49, 49, 49);
 }
 
 .sidenav p {
@@ -147,4 +147,10 @@ body {
 .form-control {
      margin-bottom: 2%;
      
+}
+
+#topBlock {
+     height: 50px;
+     background-color: rgb(49, 49, 49);
+     border-left: none;
 }
