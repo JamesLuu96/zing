@@ -34,6 +34,7 @@
                     <form class="chat-form">
                          <input type="text" id="chatInput" class="form-control" placeholder="Enter Message Here"
                               aria-label="Recipient's username" aria-describedby="button-addon2">
+                         <div id="feedback"></div>
                          <button type="submit">Send</button>
                          <label for="image-upload"><i class="fas fa-camera" id="insert-image"></i></label>
                          <input type="file" id="image-upload">
@@ -46,6 +47,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="/assets/javascript/main.js"></script>
 <script src="/assets/javascript/logout.js"></script>

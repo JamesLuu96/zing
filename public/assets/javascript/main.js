@@ -3,6 +3,7 @@ const chatInput = document.querySelector('#chatInput')
 const socket = io()
 const roomId = document.querySelector('.chat-room-title').getAttribute('data-id')
 const form = document.querySelector('.chat-form')
+const feedback = document.getElementById('feedback')
 
 
 const {
@@ -21,8 +22,17 @@ form.addEventListener('submit', (event) => {
     const message = chatInput.value
     chatHistory(message, roomId)
     socket.emit('chatMessage', message)
-    // chatInput.value = ''
-    // chatInput.focus()
+    event.target.elements.chatInput.value = ''
+    event.target.elements.chatInput.focus()
+})
+
+// "Typing" section
+chatInput.addEventListener('keypress', function(){
+    socket.emit('typing', "USERNAME")
+})
+
+socket.on('typing', function(data) {
+    feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>'
 })
 
 function outputMessage(message) {

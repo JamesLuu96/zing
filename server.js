@@ -65,6 +65,9 @@ io.on('connection', socket => {
             io.to(data.roomId).emit('message', message)
         })
 
+        socket.on('typing', function(data) {
+            socket.broadcast.emit('typing', data)
+        })
 
         socket.on('disconnect', () => {
             io.to(data.roomId).emit('message', 'Someone left the room.')
