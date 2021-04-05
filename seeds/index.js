@@ -2,7 +2,6 @@ const seedUsers = require('./user-seeds');
 const seedRooms = require('./room-seeds');
 const seedType = require('./type-seeds')
 
-
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {

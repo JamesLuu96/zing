@@ -25,14 +25,16 @@ router.post("/login", (req, res) => {
 			req.session.user_id = dbUserData.id;
 			req.session.username = dbUserData.username;
 			req.session.loggedIn = true;
-
+     console.log(req.session)
 			res.json({ user: dbUserData, message: "You are now logged in!" });
 		});
-	});
+	}).catch(err=>{
+		res.status(500).json(err)
+	})
 });
 
 router.post("/logout", (req, res) => {
-	console.log(req.session.loggedIn)
+	console.log(req.session.loggedIn, "checking log out")
 	if (req.session.loggedIn) {
 		req.session.destroy(() => {
 			res.status(204).end();
@@ -40,6 +42,7 @@ router.post("/logout", (req, res) => {
 	} else {
 		res.status(404).end();
 	}
+	console.log(req.session.loggedIn)
 });
 
 
@@ -91,7 +94,7 @@ router.post("/", (req, res) => {
 				req.session.user_id = dbUserData.id;
 				req.session.username = dbUserData.username;
 				req.session.loggedIn = true;
-
+   console.log("user created")
 				res.json(dbUserData);
 			});
 		})

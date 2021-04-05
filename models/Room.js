@@ -29,6 +29,7 @@ Room.init(
 				key: "id",
 			},
 		},
+
 	},
 	{
 		sequelize,

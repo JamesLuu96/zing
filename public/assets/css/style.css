@@ -16,14 +16,11 @@ a:hover{
      right: 5%;
      height:100vh;
      padding-top: 0px;
-<<<<<<< HEAD
      /* margin-top: 50px; */
      border-left: 2px solid rgb(49, 49, 49);
-=======
      margin-top: 50px;
      overflow:auto;
      border-bottom: 1px solid #f2f2f2;
->>>>>>> feature/socket
 }
 
 .sidenav p {
@@ -79,7 +76,6 @@ a:hover{
      white-space: nowrap;
 }
 
-<<<<<<< HEAD
 #roomTitle h2,
 #usernameTitle h2 {
      font-weight: bold;
@@ -95,8 +91,6 @@ a:hover{
 
 }
 
-=======
->>>>>>> feature/socket
 #usernameTitle {
      padding: 6px 8px 6px 16px;
      text-decoration: none;
@@ -107,6 +101,7 @@ a:hover{
      padding-left: 20px;
      white-space: nowrap;
 }
+
 
 .sidenav a:hover {
      color: #f1f1f1;
@@ -175,15 +170,27 @@ a:hover{
 }
 
 
-<<<<<<< HEAD
-=======
 #chatInput {
      max-width: 75%;
      margin-top: 1%;
      padding-bottom: 1%;
      
->>>>>>> feature/socket
 
+}
+/* #chatList li:nth-child(odd){
+     background-color: #f4f4f4;
+     width:60%;
+     padding:10px;
+     align-items: right;
+     border-radius: 4px;
+}
+#chatList li:nth-child(even){
+     background-color: #5487e6;
+     width:60%;
+     padding:10px;
+     border-radius: 4px;
+     align-items: left;
+} */
 
 #button-addon2 {
      background-color: rgb(74, 143, 255);
