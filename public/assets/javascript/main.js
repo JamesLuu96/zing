@@ -99,3 +99,23 @@ async function chatHistory(message){
  return room_id;
  }
 
+
+
+
+
+
+
+
+
+
+
+ function renderData(data){
+  data.map(data=>{
+     const list = document.createElement('li')
+     list.textContent = data.message
+ //   messages.push(message)
+     chatList.append(list)
+  })
+}
+
+
