@@ -2,7 +2,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 const sequelize = require('./config/connection')
 const session = require('express-session')
 const exphbs = require('express-handlebars')
@@ -51,7 +51,6 @@ app.set('view engine', 'handlebars');
 io.on('connection', socket => {
     socket.on('joinRoom', (data) => {
         const user = userJoin(socket.id, data.username, data.roomId)
-
         socket.join(data.roomId)
 
         socket.to(data.roomId).emit('joinRoom', user)
@@ -59,7 +58,7 @@ io.on('connection', socket => {
         socket.emit('message', "You entered the room.")
         console.log('joined')
 
-        socket.broadcast.to(data.roomId).emit('message', `${data.username} entered the room.`)
+        socket.broadcast.to(data.roomId).emit('message', `${user.username} entered the room.`)
 
         socket.on('chatMessage', (message) => {
             console.log(message, "this is new message")
@@ -73,6 +72,8 @@ io.on('connection', socket => {
             console.log('left')
         })
 
+
+        
     })
 })
 

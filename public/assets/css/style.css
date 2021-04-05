@@ -85,6 +85,7 @@ a:hover{
      white-space: nowrap;
 }
 
+
 .sidenav a:hover {
      color: #f1f1f1;
 }
@@ -140,6 +141,20 @@ a:hover{
      
 
 }
+/* #chatList li:nth-child(odd){
+     background-color: #f4f4f4;
+     width:60%;
+     padding:10px;
+     align-items: right;
+     border-radius: 4px;
+}
+#chatList li:nth-child(even){
+     background-color: #5487e6;
+     width:60%;
+     padding:10px;
+     border-radius: 4px;
+     align-items: left;
+} */
 
 #button-addon2 {
      background-color: rgb(74, 143, 255);

@@ -26,9 +26,22 @@ Room.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
 });
+// onDelete:"CASCADE",onUpdate:"CASCADE"
 
-User.belongsToMany(Room, { through: { model: Chat, unique: false },onDelete:"CASCADE",onUpdate:"CASCADE" });
-Room.belongsToMany(User, { through: { model: Chat, unique: false },onDelete:"CASCADE",onUpdate:"CASCADE"} );
-
+User.belongsToMany(Room, { through: { model: Chat, unique: false }, });
+Room.belongsToMany(User, { through: { model: Chat, unique: false }} );
+// Chat.belongsTo(User, {
+// 	foreignKey: "user_id",
+//   });
+//   Chat.belongsTo(Room, {
+// 	foreignKey: "room_id",
+//   });
+//   User.hasMany(Chat, {
+// 	foreignKey: "user_id",
+//   });
+  
+//   Room.hasMany(Chat, {
+// 	foreignKey: "room_id",
+//   });
 
 module.exports = { User, Room, Type,Chat };

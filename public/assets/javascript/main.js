@@ -3,16 +3,18 @@ const chatInput = document.querySelector('#chatInput')
 const socket = io()
 const roomId = document.querySelector('.chat-room-title').getAttribute('data-id')
 const form = document.querySelector('.chat-form')
+
+
 const {
     user_id,
     username
 } = JSON.parse(sessionStorage.getItem("userInfo"))
 
-// socket.emit('joinRoom', {roomId,username})
 socket.emit('joinRoom', {
     roomId,
     username
 })
+
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -35,7 +37,7 @@ function outputMessage(message) {
 socket.on('joinRoom', user => {
     const list = document.createElement('li')
     list.setAttribute('data-id', user.id)
-    list.innerHTML = `<i class="far fa-user pull-right mr-2" id=""></i>${user.username}`
+    list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`
     document.querySelector('#room-users ul').append(list)
 })
 
@@ -64,27 +66,47 @@ async function chatHistory(message) {
         },
     });
     if (response.ok) {
-        console.log("")
+        console.log("success")
     } else {
-        alert(response.statusText);
+        console.log("fail")
     }
 }
 
 //fetch and render the data when the page reloads 
 if (window.performance) {
     let room_id = getRoomId()
-    fetch(`/api/chats/${room_id}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    }).then(data => {
-        return data.json()
-    }).then(data => {
-        let newData = data.filter(item => item.room_id === room_id)
-        renderData(newData)
-    })
+    fetchChatHistory(room_id)
+    // deleteOldHistory(room_id)
 }
+
+
+ function fetchChatHistory(room_id){
+ fetch(`/api/chats/${room_id}`, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+    },
+}).then(data => {
+    return data.json()
+}).then(data => {
+  console.log(data)
+  console.log(room_id)
+    // let newData = data.filter(item => item.room_id === room_id)
+    // renderData(newData)
+})
+}
+
+// function deleteOldHistory(room_id){
+//   fetch(`/api/chats/${room_id}`,{
+//     method: "DELETE",
+//     headers: {
+//         "Content-Type": "application/json",
+//     },
+//   }).then(data=>{
+//     console.log(data)
+//   })
+// }
+
 
 //get room id 
 function getRoomId() {
@@ -101,10 +123,10 @@ function getRoomId() {
 
 //render data 
 function renderData(data) {
-    console.log(data)
     data.map(data => {
         const list = document.createElement('li')
         list.textContent = data.message
         chatList.append(list)
     })
 }
+
