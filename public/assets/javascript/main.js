@@ -85,4 +85,17 @@ async function chatHistory(message){
     
  }
 
+ 
+ 
+ function getRoomId(){
+  let room_id = window.location.toString().split("/");
+  
+  //check if the url last is '/' or not
+  if (room_id[room_id.length - 1] === "") {
+   room_id = room_id[room_id.length - 2];
+  } else {
+      room_id = room_id[room_id.length - 1];
+  }
+ return room_id;
+ }
 
