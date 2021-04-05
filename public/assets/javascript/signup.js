@@ -1,13 +1,11 @@
-
-
 async function signupFormHandler(event) {
 	event.preventDefault();
 
 	const username = document.querySelector("#username-signup").value.trim();
-	
+
 	const password = document.querySelector("#password-signup").value.trim();
 
-	if (username  && password) {
+	if (username && password) {
 		const response = await fetch("/api/users", {
 			method: "post",
 			body: JSON.stringify({
@@ -21,11 +19,11 @@ async function signupFormHandler(event) {
 		if (response.ok) {
 			document.location.replace("/");
 		} else {
-			document.location.reload()
+			document.location.reload();
 		}
 	}
 }
 
-document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);
-
-
+document
+	.querySelector(".signup-form")
+	.addEventListener("submit", signupFormHandler);

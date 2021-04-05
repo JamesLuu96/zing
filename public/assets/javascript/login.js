@@ -32,12 +32,6 @@ async function loginFormHandler(event) {
 	  	sessionStorage.setItem('userInfo', JSON.stringify({username:data.user.username,user_id:data.user.id}));
 		  document.location.replace("/");
 		})
-
-		// if (response.ok) {
-		// 	
-		// } else {
-		// 	document.location.reload()
-		// }
 	}
 }
 
