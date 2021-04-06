@@ -1,181 +1,167 @@
 body {
-     font-family: "Lato", sans-serif;
-     overflow:auto;
-     overflow-x: hidden;
-  
+	font-family: "Lato", sans-serif;
+}
 
+h1.navbar-brand {
+	font-size: 40px;
+	color: white;
 }
-a:hover{
-     text-decoration: none;
+
+nav a {
+	font-size: 24px;
+	color: white;
 }
+
+a:hover {
+	text-decoration: none;
+}
+
+main {
+	width: 80%;
+}
+
 .sidenav {
-     width: 15%;
-     position: fixed;
-     z-index: 1;
-     top: 0;
-     right: 5%;
-     height:100vh;
-     padding-top: 0px;
-     /* margin-top: 50px; */
-     border-left: 2px solid rgb(49, 49, 49);
-     margin-top: 50px;
-     overflow:auto;
-     border-bottom: 1px solid #f2f2f2;
+	z-index: 1;
+	right: 0;
+	height: 100%;
+	/* margin-top: 50px; */
+	border-left: 1px solid rgb(194, 194, 194);
 }
 
 .sidenav p {
-     padding: 6px 8px 6px 16px;
-     text-decoration: none;
-     font-size: 25px;
-     color: #818181;
-     display: block;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
 }
 
-#room {
-     padding: 6px 8px 6px 16px;
-     text-decoration: none;
-     font-size: 1.2rem;
-     color: #000000;
-     display: block;     
-     border-bottom: 1px solid #f2f2f2;
-     padding-left: 20px;
-     width: 79%;
+.list-group-item {
+	border: none;
+	border-bottom: 1px solid #f2f2f2;
 }
 
 #roomUser {
-     font-size: 0.5em;
-     
+	font-size: 0.5em;
 }
 
-.online-users{
-  font-size:10px;
-     color:rgb(34, 224, 34)
+.online-users {
+	font-size: 10px;
+	color: rgb(34, 224, 34);
 }
 
 #username {
-     padding: 10px 8px 10px 16px;
-     text-decoration: none;
-     font-size: .8em;
-     color: #000000;
-     display: block;
-     padding-left: 20px;
-     border-bottom: 1px solid #f2f2f2;
-     
+	padding: 10px 8px 10px 16px;
+	text-decoration: none;
+	font-size: 0.8em;
+	color: #000000;
+	display: block;
+	padding-left: 20px;
+	border-bottom: 1px solid #f2f2f2;
 }
-.username-badge{
-     width:6rem;
+.username-badge {
+	width: 6rem;
 }
 #roomTitle {
-     padding: 6px 8px 6px 16px;
-     text-decoration: none;
-     font-size: 20px;
-     color: #000000;
-     display: block;
-    margin-left:10rem;
-     padding-left: 20px;
-     white-space: nowrap;
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #000000;
+	display: block;
+	margin-left: 10rem;
+	padding-left: 20px;
+	white-space: nowrap;
 }
 
 #roomTitle h2,
 #usernameTitle h2 {
-     font-weight: bold;
+	font-weight: bold;
 }
 
 #chatInput {
-     width: 78%;
-     margin-top: 1%;
-     border-bottom:1px solid rgb(34, 34, 34);
-     padding-bottom: 1%;
-     /* margin-left: 1%; */
-     
-
+	width: 78%;
+	margin-top: 1%;
+	border-bottom: 1px solid rgb(34, 34, 34);
+	padding-bottom: 1%;
+	/* margin-left: 1%; */
 }
 
 #usernameTitle {
-     padding: 6px 8px 6px 16px;
-     text-decoration: none;
-     font-size: 25px;
-     color: #000000;
-     display: block;
-     border-bottom: 1px solid #f2f2f2;
-     padding-left: 20px;
-     white-space: nowrap;
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #000000;
+	display: block;
+	border-bottom: 1px solid #f2f2f2;
+	padding-left: 20px;
+	white-space: nowrap;
 }
-
 
 .sidenav a:hover {
-     color: #f1f1f1;
+	color: #f1f1f1;
 }
 
-.main {
-     margin-left: 160px;
-     /* Same as the width of the sidenav */
-     font-size: 28px;
-     /* Increased text to enable scrolling */
-     padding: 0px 10px;
+/* room styles */
+h3 {
+	color: rgb(34, 34, 34);
 }
 
 @media screen and (max-height: 450px) {
-     .sidenav {
-          padding-top: 15px;
-     }
+	.sidenav {
+		padding-top: 15px;
+	}
 
-     .sidenav a {
-          font-size: 18px;
-     }
+	.sidenav a {
+		font-size: 18px;
+	}
 }
 
 @media screen and (max-width: 768px) {
-     .sidenav {
-          padding-top: 15px;
-          display: none;
-     }
+	.sidenav {
+		padding-top: 15px;
+		display: none;
+	}
 
-     .sidenav a {
-          font-size: 18px;
-     }
+	.sidenav a {
+		font-size: 18px;
+	}
 
-     #room {
-          width: auto;
-     }
+	#room {
+		width: auto;
+	}
 
-     #chatInput {
-          width: auto;
-     }
+	#chatInput {
+		width: auto;
+	}
 }
 
 #topbar {
-     min-width:100%;
-     background-color: rgb(49, 49, 49);
-     color: white;
-     margin-right: 0px;
-     height:50px;
+	min-width: 100%;
+	background-color: rgb(49, 49, 49);
+	color: white;
+	margin-right: 0px;
+	height: 50px;
 }
 
 #topbar h2 {
-     font-size: 120%;
+	font-size: 40px;
 }
 
 .navbar {
-     max-width: 60%;
+	max-width: 60%;
 }
 
 #chatrooms {
-     max-width: 60%;
-     margin: 0px;
+	width: 70%;
+	margin: 0p;
 }
 
 #roomicon {
-     float: right;
+	float: right;
 }
 
-
 #chatInput {
-     max-width: 75%;
-     margin-top: 1%;
-     padding-bottom: 1%;
-     
-
+	max-width: 75%;
+	margin-top: 1%;
+	padding-bottom: 1%;
 }
 /* #chatList li:nth-child(odd){
      background-color: #f4f4f4;
@@ -193,26 +179,25 @@ a:hover{
 } */
 
 #button-addon2 {
-     background-color: rgb(74, 143, 255);
-     color: white;
-    
+	background-color: rgb(74, 143, 255);
+	color: white;
 }
 
 .form-control {
-     margin-bottom: 2%;
-     margin-left: 2%;     
+	margin-bottom: 2%;
+	margin-left: 2%;
 }
 
 #topBlock {
-     height: 50px;
-     background-color: rgb(49, 49, 49);
-     border-left: none;
+	height: 50px;
+	background-color: rgb(49, 49, 49);
+	border-left: none;
 }
 
 .badge {
-     margin-right: 5%;
+	margin-right: 5%;
 }
 
 .btn {
-     margin-right: 8%;
+	margin-right: 8%;
 }

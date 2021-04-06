@@ -1,0 +1,14 @@
+<a href="{{id}}" class="list-group-item list-group-item-action">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h3>{{room_name}}</h3>
+ 
+      <span class="badge badge-info username-badge">{{user.username}}</span>
+    </div>
+    <div>
+      <span class="badge badge-info pull-right roomUser p-2">
+      <i class="far fa-user pull-right" id="roomicon"><span class="ml-2">{{getRoomUsers id}}</span></i>
+      </span>
+    </div>
+  </div>
+</a>

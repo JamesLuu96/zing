@@ -1,5 +1,5 @@
 async function logout(event) {
-	event.preventDefault()
+	event.preventDefault();
 	const response = await fetch("/api/users/logout", {
 		method: "post",
 		headers: { "Content-Type": "application/json" },
@@ -8,9 +8,8 @@ async function logout(event) {
 	if (response.ok) {
 		document.location.replace("/login");
 	} else {
-		document.location.replace('/');
+		document.location.replace("/");
 	}
-	
 }
 
-document.querySelector(".logout").addEventListener("click", logout);
+document.querySelector("#logout").addEventListener("click", logout);
