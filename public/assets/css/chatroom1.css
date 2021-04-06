@@ -19,24 +19,4 @@
 #chatBox {
 	background-color: #fff;
 	height: 75vh;
-	margin: 3rem 5% 0 0;
-}
-.input-group {
-	margin: -35px -20px 0 -19px;
-	width: 103%;
-	border-right: 0;
-	position: relative;
-}
-
-#insert-image {
-	font-size: 1.4rem;
-	border-right: 0;
-	margin-top: 0.7rem;
-	color: rgb(202, 192, 192);
-	position: absolute;
-	top: -5px;
-	right: 35px;
-}
-#image-upload {
-	display: none;
 }

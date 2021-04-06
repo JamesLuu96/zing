@@ -2,12 +2,11 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Room, User, Type } = require("../models");
 const path = require("path");
-const {users} = require("../utils")
-const withAuth=require('../utils/auth')
+const { users } = require("../utils");
+const withAuth = require("../utils/auth");
 // get all rooms for homepage
 
-
-router.get("/",withAuth, (req, res) => {
+router.get("/", withAuth, (req, res) => {
 	console.log("======================");
 	Room.findAll({
 		attributes: ["id", "room_name", "type_id", "user_id", "created_at"],
@@ -24,7 +23,11 @@ router.get("/",withAuth, (req, res) => {
 	})
 		.then((dbRoomData) => {
 			rooms = dbRoomData.map((x) => x.get({ plain: true }));
-			res.render("homepage", { rooms, users: users });
+			res.render("homepage", {
+				rooms,
+				users: users,
+				loggedIn: req.session.loggedIn,
+			});
 		})
 		.catch((err) => {
 			console.log(err);
@@ -32,19 +35,16 @@ router.get("/",withAuth, (req, res) => {
 		});
 });
 
-
-
-
 router.get("/login", (req, res) => {
 	res.render("login");
 });
 
 router.get("/signup", (req, res) => {
 	res.render("signup");
-  });
+});
 
 // get single room
-router.get("/:id",withAuth, (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
 	Room.findOne({
 		where: {
 			id: req.params.id,
@@ -67,7 +67,10 @@ router.get("/:id",withAuth, (req, res) => {
 				return;
 			}
 			const room = dbRoomData.get({ plain: true });
-			res.render("chatroom", room);
+			res.render("chatroom", {
+				room,
+				loggedIn: req.session.loggedIn,
+			});
 		})
 		.catch((err) => {
 			console.log(err);

@@ -30,7 +30,7 @@
   <ul class="navbar-nav">
     {{#if loggedIn}}
       <li class="nav-item">
-        <button id="logout" type="button" class="btn pr-5">logout</button>
+        <button id="logout" type="button" class="btn nav-link pr-5 text-center">logout</button>
       </li>
     {{else}}
       <li class="nav-item">
@@ -41,11 +41,10 @@
   </div>
 </nav>
      {{{body}}}
+     {{#if loggedIn}}
+<script src="/assets/javascript/logout.js"></script>
+{{/if}}
 
 </body>
 
-{{#if loggedIn}}
-<script src="/assets/javascript/logout.js"></script>
-{{/if}}
-<script src="/assets/javascript/add-room.js"></script>
 </html>
