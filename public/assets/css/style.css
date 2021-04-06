@@ -72,5 +72,8 @@ a:hover {
 /* room styles */
 
 .badge {
-	font-size: 16px;
+	background-color: #4357ad;
+	font-size: 24px;
+	line-height: 30px;
+	color: white;
 }
