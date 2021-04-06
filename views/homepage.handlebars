@@ -1,7 +1,7 @@
 <!-- Left Bar -->
-<div class="container-fluid m-2">
-  <div class="row m-4">
-    <div class="col-8 p-4">
+<div class="container-fluid m-0 p-0">
+  <div class="row m-0">
+    <div class="col-8 p-5">
       <h2>Chat rooms</h2>
       <form class="input-group mb-3" id="chatInput">
         <input type="text" class="room-name form-control" placeholder="New chat room" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -12,14 +12,11 @@
       {{/each}}
     </div>
     <div class="col-4 p-4 sidenav">
-      <div class="" id="usernameTitle">
+      <div>
         <h2>Online Users</h2>
       </div>
-      {{#each rooms}}
-      <div class="d-flex justify-content-between pr-4" id="username">
-        <span><i class="fas fa-user-secret mr-3"></i>{{user.username}} </span>
-        <span><i class="fas fa-circle online-users"></i></span>
-      </div>
+     {{#each rooms}}
+        {{> online-user }}
       {{/each}}
     </div>
   </div>
