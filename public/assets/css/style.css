@@ -116,8 +116,4 @@ label {
 	height: 100%;
 }
 
-#chat-input {
-	box-shadow: 0 0 2px 0 12px #edeef8;
-	width: 100%;
-	border-bottom: 1px solid #e2e2e2;
-}
+

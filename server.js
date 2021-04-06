@@ -57,17 +57,21 @@ io.on('connection', socket => {
 
         socket.emit('message', "You entered the room.")
         console.log('joined')
+     
 
         socket.broadcast.to(data.roomId).emit('message', `${user.username} entered the room.`)
 
         socket.on('chatMessage', (message) => {
             console.log(message, "this is new message")
-            io.to(data.roomId).emit('message', message)
+            io.to(data.roomId).emit('message', user.username + ": " + message)
         })
 
+        socket.on('typing', function(data) {
+            socket.broadcast.emit('typing', user.username)
+        })
 
         socket.on('disconnect', () => {
-            io.to(data.roomId).emit('message', 'Someone left the room.')
+            io.to(data.roomId).emit('message', user.username + ' left the room.')
             io.to(data.roomId).emit('leaveRoom', user)
             console.log('left')
         })
