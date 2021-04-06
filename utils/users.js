@@ -25,6 +25,10 @@ function userLeave(id) {
 }
 
 // Get room users
+function getUsersInRoom(room) {
+	return users.filter((user) => user.room === room);
+}
+
 function getRoomUsers(room) {
 	return users.filter((user) => user.room === room).length;
 }
@@ -34,5 +38,6 @@ module.exports = {
 	getCurrentUser,
 	userLeave,
 	getRoomUsers,
+	getUsersInRoom,
 	users,
 };

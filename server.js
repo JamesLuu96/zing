@@ -18,6 +18,7 @@ const {
     getCurrentUser,
     userLeave,
     getRoomUsers,
+    getUsersInRoom,
     users
 } = require('./utils/users')
 

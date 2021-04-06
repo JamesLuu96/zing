@@ -47,13 +47,10 @@ function outputMessage(message) {
 
 //join room
 socket.on('joinRoom', user => {
-    function getNames() {
-        const list = document.createElement('li')
-        list.setAttribute('data-id', user.id)
-        list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`
-        document.querySelector('#room-users ul').append(list)
-    }
-    setTimeout(getNames, 2000)
+	const list = document.createElement('li')
+	list.setAttribute('data-id', user.id)
+	list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`
+	document.querySelector('#room-users ul').append(list)
 })
 
 
