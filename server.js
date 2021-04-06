@@ -63,7 +63,7 @@ io.on('connection', socket => {
 
         socket.on('chatMessage', (message) => {
             console.log(message, "this is new message")
-            io.to(data.roomId).emit('message', message)
+            io.to(data.roomId).emit('message', user.username + ": " + message)
         })
 
         socket.on('typing', function(data) {
