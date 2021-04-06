@@ -17,22 +17,22 @@
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
      </script>
      <link rel="stylesheet" href="/assets/css/style.css">
-     <title>Project 2</title>
+     <title>zing</title>
 </head>
 
 <body>
   <!-- Top Bar -->
-<nav class="navbar navbar-expand-lg p-5" style="background-color: #eb484d;" id="topbar">
-  <h1 class="navbar-brand" href="/"> zing</h1>
+<nav class="navbar navbar-expand-lg p-2" id="topbar">
+  <a href="/"><h1 class="navbar-brand pl-5" href="/">zing</h1></a>
   <div class="collapse navbar-collapse justify-content-end">
   <ul class="navbar-nav">
     {{#if loggedIn}}
       <li class="nav-item">
-        <button id="logout" type="button" class="btn p-4">Logout</button>
+        <button id="logout" type="button" class="btn pr-5">Logout</button>
       </li>
     {{else}}
       <li class="nav-item">
-        <a id="login" class="nav-link" href="/login">Login</a>
+        <a id="login" class="nav-link pr-5" href="/login">Login</a>
       </li>
     {{/if}}
   </ul>
