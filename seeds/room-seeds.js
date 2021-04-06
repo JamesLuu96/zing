@@ -39,17 +39,17 @@ const postdata = [
   {
     room_name: 'Testing',
     type_id: 2,
-    // user_id: 1
+    user_id: 1
   },
   {
     room_name: 'Testing',
     type_id: 2,
-    // user_id: 9
+    user_id: 9
   },
   {
     room_name: 'Testing',
     type_id: 2,
-    // user_id: 5
+    user_id: 5
   },
   {
     room_name: 'Testing',
