@@ -18,10 +18,6 @@ nav a {
 	color: white;
 }
 
-a:hover {
-	text-decoration: none;
-}
-
 .sidenav {
 	overflow: hidden;
 	border-left: 1px solid #e2e2e2;
@@ -35,7 +31,6 @@ a:hover {
 .list-group-item:hover {
 	background-color: #fce9e9;
 	border-left: 4px solid #eb484d;
-	color: #eb484d;
 }
 
 .room-list {
@@ -63,17 +58,13 @@ h4 {
 	border-bottom: 1px solid #e2e2e2;
 }
 
-.sidenav a:hover {
-	color: #f1f1f1;
+a:hover {
+	text-decoration: none;
+	font-weight: 700;
 }
 
 #roomicon {
 	float: right;
-}
-
-#create-new {
-	background-color: #329f5b;
-	color: white;
 }
 
 #chatrooms {
