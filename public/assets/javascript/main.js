@@ -1,9 +1,10 @@
 const chatList = document.querySelector("#chatList");
 const chatInput = document.querySelector("#chatInput");
+const list = document.createElement("li");
 const socket = io();
 const roomId = document
-	.querySelector(".chat-room-title")
-	.getAttribute("data-id");
+.querySelector(".chat-room-title")
+.getAttribute("data-id");
 const form = document.querySelector(".chat-form");
 
 const { user_id, username } = JSON.parse(sessionStorage.getItem("userInfo"));
@@ -18,15 +19,13 @@ form.addEventListener("submit", (event) => {
 	const message = chatInput.value;
 	chatHistory(message, roomId);
 	socket.emit("chatMessage", message);
-	// chatInput.value = ''
-	// chatInput.focus()
+	chatInput.value = ''
+	chatInput.focus()
 });
 
 function outputMessage(message) {
-	// console.log(message)
 	const list = document.createElement("li");
 	list.textContent = message;
-	//   messages.push(message)
 	chatList.append(list);
 }
 
@@ -67,6 +66,12 @@ async function chatHistory(message) {
 		console.log("fail");
 	}
 }
+
+// Adds user to page
+list.setAttribute("data-id", user_id);
+list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${username}`;
+document.querySelector("#room-users ul").append(list);
+
 
 //fetch and render the data when the page reloads
 if (window.performance) {
