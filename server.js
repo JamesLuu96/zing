@@ -13,6 +13,10 @@ const server = http.createServer(app)
 const socketio = require('socket.io')
 const io = socketio(server)
 const sharedsession = require("express-socket.io-session")
+const fs=require('fs')
+const {readFile}=require('fs')
+
+
 const {
     userJoin,
     getCurrentUser,
@@ -72,11 +76,17 @@ io.on('connection', socket => {
             console.log('left')
         })
 
-
-        
+        socket.on('image', async image => {
+            const buffer = Buffer.from(image, 'base64');
+            fs.writeFile(__dirname + '/public/assets/test.png', buffer, function(err, result) {
+                if(err) console.log('error', err);
+              }); // fs.promises
+              io.to(data.roomId).emit('image', image.toString('base64'));
+        });
+ 
+    
     })
 })
-
 sequelize.sync({
         force: false
     })

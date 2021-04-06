@@ -1,6 +1,6 @@
 const chatList = document.querySelector('#chatList')
 const chatInput = document.querySelector('#chatInput')
-const socket = io()
+const socket = io('http://localhost:3000')
 const roomId = document.querySelector('.chat-room-title').getAttribute('data-id')
 const form = document.querySelector('.chat-form')
 
@@ -128,3 +128,88 @@ function renderData(data) {
     })
 }
 
+//variable declaration
+var filesUpload = null;
+var file = null;
+
+var send = false;
+
+if (window.File && window.FileReader && window.FileList) {
+    //HTML5 File API ready
+    init();
+} else {
+    //browser has no support for HTML5 File API
+    //send a error message or something like that
+    console.log("erro")
+    //TODO
+}
+
+/**
+ * Initialize the listeners and send the file if have.
+ */
+function init() {
+    filesUpload = document.querySelector('.input-files');
+    filesUpload.addEventListener('change', fileHandler, false);
+}
+
+
+function fileHandler(e) {
+    var files = e.target.files || e.dataTransfer.files;
+//   console.log(files)
+    if (files) {
+        //send only the first one
+        file = files[0];
+    }
+    console.log(files)
+}
+
+function sendFile() {
+    if (file) {
+        //read the file content and prepare to send it
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            console.log('Sending file...');
+            //get all content
+            const base64 = this.result.replace(/.*base64,/, '');
+           
+        //    console.log(base64)
+            socket.emit('image', base64);
+            //send the content via socket
+            //socket.emit('send-file', file.name, buffer);
+        };
+        // readAsBinaryString
+        reader.readAsDataURL(file);
+    }
+}
+
+
+
+let imageChunks = [];
+socket.on('image', image => {
+    // create image with
+    const img = new Image();
+    // change image type to whatever you use, or detect it in the backend 
+    // and send it if you support multiple extensions
+    imageChunks.push(image);
+    console.log(imageChunks)
+    img.setAttribute('src' , `data:image/png;base64,${image}`);
+    img.setAttribute('class', 'image');
+    // Insert it into the DOM
+    const chatList = document.querySelector('#chatList')
+    chatList.append(img);
+    
+});
+
+socket.on('sendImage',message=>{
+    //console.log(message)
+    renderImage(message)
+})
+
+function renderImage(message){
+    const img=document.createElement('img');
+    img.className="image";
+    img.src=`data:image/png;base64, ${message} alt="Red dot"`;
+    chatList.append(img);
+}
+document.querySelector('.image-upload').addEventListener('click',sendFile)
