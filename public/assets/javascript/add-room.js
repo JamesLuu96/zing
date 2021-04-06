@@ -1,7 +1,7 @@
 async function newRoomHandler(event) {
 	event.preventDefault();
 
-	const room_name = document.querySelector(".room-name").value;
+	const room_name = document.querySelector("#room-name").value;
 
 	const response = await fetch(`/api/rooms`, {
 		method: "POST",
@@ -21,4 +21,6 @@ async function newRoomHandler(event) {
 	}
 }
 
-document.querySelector("#chatInput").addEventListener("submit", newRoomHandler);
+document
+	.querySelector("#chat-input")
+	.addEventListener("submit", newRoomHandler);
