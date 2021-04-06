@@ -23,8 +23,8 @@
 #chatBox {
      background-color:#fff;
      height: 75vh;
-    margin:3rem 5% 0 0;
-     
+    margin:3rem 5% 0 0; 
+    overflow:scroll;    
 }
 .input-group{
      margin:-35px -20px 0 -19px;
@@ -40,9 +40,13 @@
      color:rgb(202, 192, 192);
      position:absolute;
      top:-5px;
-       right:35px;
-     
+     right:35px;    
 }
+
 #image-upload{
      display: none;
+}
+
+#chatInput{
+     min-width: 300%;
 }
