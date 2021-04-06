@@ -53,6 +53,16 @@ socket.on('joinRoom', user => {
 	document.querySelector('#room-users ul').append(list)
 })
 
+socket.on('currentUsers', allUsers => {
+	console.log(allUsers)
+	allUsers.forEach(user => {
+		const list = document.createElement('li')
+		list.setAttribute('data-id', user.id)
+		list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`
+		document.querySelector('#room-users ul').append(list)
+	})
+})
+
 
 socket.on('message', message => {
     outputMessage(message)

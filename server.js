@@ -51,8 +51,9 @@ app.set('view engine', 'handlebars');
 // socket.handshake.session
 io.on('connection', socket => {
     socket.on('joinRoom', (data) => {
-        const user = userJoin(socket.id, data.username, data.roomId)
         socket.join(data.roomId)
+        socket.emit('currentUsers', getUsersInRoom(data.roomId))
+        const user = userJoin(socket.id, data.username, data.roomId)
 
         socket.to(data.roomId).emit('joinRoom', user)
 
@@ -72,6 +73,7 @@ io.on('connection', socket => {
         })
 
         socket.on('disconnect', () => {
+            userLeave(socket.id)
             io.to(data.roomId).emit('message', user.username + ' left the room.')
             io.to(data.roomId).emit('leaveRoom', user)
             console.log('left')

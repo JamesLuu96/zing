@@ -6,7 +6,7 @@ console.log(users);
 function userJoin(id, username, room) {
 	const user = { id, username, room };
 	users.push(user);
-
+	console.table(users)
 	return user;
 }
 
@@ -26,10 +26,12 @@ function userLeave(id) {
 
 // Get room users
 function getUsersInRoom(room) {
+	console.log('getRoomUsers + ' + users)
 	return users.filter((user) => user.room === room);
 }
 
 function getRoomUsers(room) {
+	console.log('getRoomUsers + ' + users)
 	return users.filter((user) => user.room === room).length;
 }
 
