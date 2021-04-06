@@ -28,15 +28,16 @@ form.addEventListener('submit', (event) => {
 
 // "Typing" section
 chatInput.addEventListener('keypress', function(){
-    socket.emit('typing', "USERNAME")
+    socket.emit('typing')
 })
 
 socket.on('typing', function(data) {
     feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>'
+    
 })
 
 function outputMessage(message) {
-    // console.log(message)
+
     const list = document.createElement('li')
     list.textContent = message
     //   messages.push(message)
