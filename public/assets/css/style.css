@@ -18,6 +18,9 @@ nav a {
 	color: white;
 }
 
+.container-fluid {
+	margin: 0 auto;
+}
 .sidenav {
 	overflow: hidden;
 	border-left: 1px solid #e2e2e2;
