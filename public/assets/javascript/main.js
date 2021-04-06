@@ -1,8 +1,10 @@
 const chatList = document.querySelector('#chatList')
 const chatInput = document.querySelector('#chatInput')
+const chatBox = document.querySelector('#chatBox')
 const socket = io()
 const roomId = document.querySelector('.chat-room-title').getAttribute('data-id')
 const form = document.querySelector('.chat-form')
+const feedback = document.getElementById('feedback')
 
 
 const {
@@ -21,29 +23,43 @@ form.addEventListener('submit', (event) => {
     const message = chatInput.value
     chatHistory(message, roomId)
     socket.emit('chatMessage', message)
-    // chatInput.value = ''
-    // chatInput.focus()
+    event.target.elements.chatInput.value = ''
+    event.target.elements.chatInput.focus()
+})
+
+// "Typing" section
+chatInput.addEventListener('keypress', function(){
+    socket.emit('typing')
+})
+
+socket.on('typing', function(data) {
+    feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>'
+    
 })
 
 function outputMessage(message) {
-    // console.log(message)
+
     const list = document.createElement('li')
     list.textContent = message
-    //   messages.push(message)
     chatList.append(list)
+    feedback.innerHTML = "";
 }
 
 //join room
 socket.on('joinRoom', user => {
-    const list = document.createElement('li')
-    list.setAttribute('data-id', user.id)
-    list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`
-    document.querySelector('#room-users ul').append(list)
+    function getNames() {
+        const list = document.createElement('li')
+        list.setAttribute('data-id', user.id)
+        list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`
+        document.querySelector('#room-users ul').append(list)
+    }
+    setTimeout(getNames, 2000)
 })
 
 
 socket.on('message', message => {
     outputMessage(message)
+    chatBox.scrollTop = chatBox.scrollHeight;
 })
 
 //leave chat room

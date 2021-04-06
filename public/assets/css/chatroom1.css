@@ -23,8 +23,9 @@
 #chatBox {
      background-color:#fff;
      height: 75vh;
-    margin:3rem 5% 0 0; 
-    overflow:scroll;    
+    margin:3rem 5% 0 0;
+    overflow-y: scroll;
+     
 }
 .input-group{
      margin:-35px -20px 0 -19px;
