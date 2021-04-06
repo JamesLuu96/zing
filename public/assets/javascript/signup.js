@@ -15,13 +15,21 @@ async function signupFormHandler(event) {
 				password,
 			}),
 			headers: { "Content-Type": "application/json" },
-		});
-
-		if (response.ok) {
+		})
+		.then((data)=>{
+			return data.json()
+		})
+		.then((data)=>{
+			console.log(data)
+			sessionStorage.setItem(
+				"userInfo",
+				JSON.stringify({
+					username: data.user.username,
+					user_id: data.user.id,
+				})
+			)
 			document.location.replace("/");
-		} else {
-			document.location.reload()
-		}
+		})
 	}
 }
 
