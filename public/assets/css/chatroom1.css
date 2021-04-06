@@ -24,6 +24,7 @@
      background-color:#fff;
      height: 75vh;
     margin:3rem 5% 0 0;
+    overflow-y: scroll;
      
 }
 .input-group{
