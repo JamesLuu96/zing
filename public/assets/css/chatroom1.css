@@ -148,3 +148,32 @@ font-weight: 600;
 .blurry-background{
 	
 }
+@media screen and (max-width: 1200px) {
+	#subnav {
+		display: flex;
+		justify-content: left;
+	}
+	#current-users-header {
+		font-size: 17px;
+	}
+	#user-icon {
+		display: none;
+	}
+
+}
+@media screen and (max-width: 980px) {
+	#users-list {
+		padding: 0;
+	}
+	#current-users-header {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 575px) {
+	#room-users {
+		visibility: hidden;
+	}
+}
