@@ -11,10 +11,11 @@ function openTab(tabName) {
 
 async function loginFormHandler(event) {
 	event.preventDefault();
-
+	let alert = document.createElement("p");
+	alert.className = "error-input";
 	const username = document.querySelector("#username").value.trim();
-	const password = document.querySelector("#password-login").value.trim();
-
+	const password = document.querySelector("#password-login").value;
+	console.log(username, password)
 	if (username && password) {
 		const response = await fetch("/api/users/login", {
 			method: "post",
@@ -37,10 +38,14 @@ async function loginFormHandler(event) {
 				);
 				document.location.replace("/");
 				document.location.reload()
-			});
+			})
+			.catch(err=>{
+			alert.textContent = "Please check your user name and password!!";
+			document.body.appendChild(alert);
+		})
 	}
 }
 
 document
-	.querySelector(".login-form")
+	.querySelector("#login-tab")
 	.addEventListener("submit", loginFormHandler);
