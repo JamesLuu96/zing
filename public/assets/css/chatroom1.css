@@ -136,6 +136,12 @@ li.blurry {
 	font-weight: 200;
 	margin-left: 7rem;
 }
+
+.dark {
+	color: black;
+	background-color: black;
+}
+
 .chat-wrapper {
 }
 

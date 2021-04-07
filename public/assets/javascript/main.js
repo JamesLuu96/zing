@@ -39,7 +39,8 @@ function alterMessage(chatEl) {
 		chatEl.classList.add("excited");
 	} else if (type_name === "blurry") {
 		chatEl.classList.add("blurry");
-	} else {
+	} else if (type_name === "dark") {
+		chatEl.classList.add("dark");
 	}
 }
 function alterBackground(backgroundEl) {
@@ -54,6 +55,8 @@ function alterBackground(backgroundEl) {
 		backgroundEl.classList.add("excited-background");
 	} else if (type_name === "blurry") {
 		backgroundEl.classList.add("blurry-background");
+	} else if (type_name === "dark") {
+		backgroundEl.classList.add("dark");
 	}
 }
 alterBackground(chatBox);
