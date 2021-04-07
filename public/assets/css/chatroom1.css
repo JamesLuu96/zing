@@ -45,5 +45,28 @@
 }
 
 li.tiny {
-	font-size: 200px;
+	font-size: 8px;
+}
+
+li.angry {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: red;
+}
+
+li.the-upside-down {
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+li.excited::after {
+	content: "!!!!!!!!!!!!!!!!!!!!!!!!";
+}
+
+li.blurry {
+	color: transparent;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
