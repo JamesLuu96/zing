@@ -6,42 +6,50 @@
 </audio>
 
 
-<div class="navbar navbar-expand-lg" id="subnav">
-     <h2 class="chat-room-owner">{{room.user.username}}'s Room</h2>
-     <h3 class="chat-room-type pl-5">{{room.type.type_name}}</h3>
+<div class="navbar navbar-expand-lg d-flex justify-content-center mb-4" id="subnav">
+  <div class="col pl-5">
+     <h1 class="chat-room-title" data-id="{{room.id}}">{{room.room_name}}</h1>
+     </div>
+    <div class="col pr-5">
+     <p class="chat-room-owner text-right"> <span class="chat-room-type">{{room.type.type_name}}</span> room created by {{room.user.username}}</p>
+     </div>
      {{#if (check_room room.user.username myUser)}}<button class="trash">Delete Room</button>{{/if}}
 </div>
 
 <div class="row wrapper">
-     <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3" id="room-users">
-          <h2><i class="fas fa-users mr-2 current-users-icon"></i>Current Users:</h2>
+     <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3 mr-5 p-0" id="room-users">
+          <h4><i class="fas fa-users mr-2 current-users-icon"></i>Current Users:</h4>
           <ul>
 
           </ul>
      </div>
-     <h2 class="chat-room-title pl-5" data-id="{{room.id}}">{{room.room_name}}</h2>
-     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7 chat-wrapper">
-          <div class="">
-               <div class="row">
+     <div class="col chat-wrapper p-0">
+     
+               <div id="chatContainer" class="row m-0 p-0">
                     <div class="col-12" id="chatBox">
                          <ul id="chatList" style="list-style-type:none">
 
                               <li></li>
                          </ul>
                     </div>
-               </div>
+            
           </div>
-          <div class="">
-               <div class="input-group mb-3">
+      
+               <div class="ml-4 mr-4 mb-0">
                     <div id="feedback"></div>
                     <form class="chat-form">
-                         <input type="text" id="chatInput" placeholder="Write a message..."
+                      <div class="input-group d-flex p-4 m-0">
+                         <input class="flex-grow-1" type="text" id="chatInput" placeholder="Write a message..."
                               aria-label="Recipient's username" aria-describedby="button-addon2" required
                               autocomplete="off">
-                         <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
+                
+                      <div class="input-group-append">
+                         <button type="submit" class="btn"><i class="fas fa-arrow-circle-right"></i></button>
+                         </div>
+                         </div>
                     </form>
                     {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
-               </div>
+           
           </div>
      </div>
 </div>
