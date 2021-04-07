@@ -38,25 +38,6 @@
 	border-bottom: 1px solid #e2e2e2;
 }
 
-<<<<<<< HEAD
-#insert-image{
-     font-size: 1.4rem;
-     border-right:0;
-     margin-top: 0.7rem;
-     color:rgb(202, 192, 192);
-     position:absolute;
-     top:-5px;
-     right:35px;    
-}
-
-#image-upload{
-     display: none;
-}
-
-#chatInput{
-     min-width: 300%;
-}
-=======
 #chatInput {
 	margin: 10px;
 	padding: 4px;
@@ -66,4 +47,3 @@
 li.tiny {
 	font-size: 200px;
 }
->>>>>>> feature/flo

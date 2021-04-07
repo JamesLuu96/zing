@@ -1,29 +1,5 @@
 body {
-<<<<<<< HEAD
-     font-family: "Lato", sans-serif;
-     overflow:auto;
-     overflow-x: hidden;
-  
-
-}
-a:hover{
-     text-decoration: none;
-}
-.sidenav {
-     width: 15%;
-     position: fixed;
-     z-index: 1;
-     top: 0;
-     right: 5%;
-     height:100vh;
-     padding-top: 0px;
-     border-left: 2px solid rgb(49, 49, 49);
-     margin-top: 50px;
-     overflow:auto;
-     border-bottom: 1px solid #f2f2f2;
-=======
 	font-family: "Barlow", sans-serif;
->>>>>>> feature/flo
 }
 
 nav {
@@ -53,16 +29,8 @@ nav a {
 	border-left: 4px solid #eb484d;
 }
 
-<<<<<<< HEAD
-#chatInput {
-     width: 78%;
-     margin-top: 1%;
-     border-bottom:1px solid rgb(34, 34, 34);
-     padding-bottom: 1%;
-=======
 .column-title {
 	border-bottom: 1px solid #e2e2e2;
->>>>>>> feature/flo
 }
 
 h4 {
@@ -118,8 +86,6 @@ h4 {
 	line-height: 24px;
 	color: rgb(36, 36, 36);
 }
-<<<<<<< HEAD
-=======
 
 .btn {
 	background-color: #4357ad;
@@ -128,7 +94,6 @@ h4 {
 	height: 60px;
 	padding: 0 16px;
 }
->>>>>>> feature/flo
 
 .btn:hover {
 	background-color: #243891;
