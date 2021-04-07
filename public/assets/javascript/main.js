@@ -29,7 +29,12 @@ function alterMessage(chatEl) {
 		chatEl.classList.add("excited");
 	} else if (type_name === "blurry") {
 		chatEl.classList.add("blurry");
+	} else if (type_name === "glowing") {
+		chatEl.classList.add("glowing");
+	}else if (type_name === "wide") {
+          chatEl.classList.add("wide");
 	}
+     
 }
 
 form.addEventListener("submit", (event) => {

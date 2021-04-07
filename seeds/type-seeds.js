@@ -16,6 +16,12 @@ const userdata = [
 	{
 		type_name: "backwards",
 	},
+     {
+		type_name: "glowing",
+	},
+     {
+		type_name: "wide",
+	},
 ];
 
 const seedType = () => Type.bulkCreate(userdata, { individualHooks: true });
