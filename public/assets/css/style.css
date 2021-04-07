@@ -2,9 +2,13 @@ body {
 	font-family: "Barlow", sans-serif;
 }
 
+.container-fluid {
+	height: 100vh;
+}
+
 nav {
 	background-color: #eb484de0;
-  line-height: 0;
+	line-height: 0;
 }
 
 h1.navbar-brand {
@@ -19,6 +23,7 @@ nav a {
 
 .room-list {
 	background-color: #f4f5fb;
+	height: 100%;
 }
 
 .sidenav {
@@ -52,7 +57,7 @@ h4 {
 	text-decoration: underline;
 }
 
-#logout{
+#logout {
 	background-color: transparent;
 }
 #login:hover,
@@ -118,10 +123,9 @@ label {
 
 .error-input {
 	text-align: center;
-	vertical-align:center;
-	margin-top:-300px;
-	color:red;
-	
+	vertical-align: center;
+	margin-top: -300px;
+	color: red;
 }
 .room-info .trash {
 	position: absolute;
@@ -132,7 +136,7 @@ label {
 	margin-right: 5px;
 }
 
-.room-info .trash:hover{
+.room-info .trash:hover {
 	cursor: pointer;
 	color: rgb(117, 38, 38);
 }
