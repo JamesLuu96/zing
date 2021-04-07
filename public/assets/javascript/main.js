@@ -63,7 +63,14 @@ chatInput.addEventListener("keypress", function () {
 });
 
 socket.on("typing", function (data) {
-	feedback.innerHTML = "<p><em>" + data + " is typing a message...</em></p>";
+	feedback.innerHTML = `<div class="chat-bubble">
+                    <div class="typing">
+                         <div class="dot"></div>
+                         <div class="dot"></div>
+                         <div class="dot"></div>
+                         <span class="writing"></span>
+                    </div>
+               </div><p><em> ${data} is typing</em></p>`;
 });
 
 function outputMessage(message) {
@@ -136,3 +143,4 @@ function renderData(data) {
 		chatList.append(list);
 	});
 }
+

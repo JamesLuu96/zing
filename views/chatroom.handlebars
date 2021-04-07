@@ -31,29 +31,34 @@
           </div>
 
           <div class="ml-4 mr-4 mb-0">
-               <div id="feedback"></div>
-               <form class="chat-form">
-                    <div class="input-group d-flex p-4 m-0">
-                         <input class="flex-grow-1" type="text" id="chatInput" placeholder="Write a message..."
-                              aria-label="Recipient's username" aria-describedby="button-addon2" required
-                              autocomplete="off">
 
-                         <div class="input-group-append">
-                              <button type="submit" class="send-button"><i class="fas fa-arrow-circle-right send-icon"></i></button>
-                         </div>
-                    </div>
-               </form>
-               {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
-
+               <div id="feedback">
+               </div>
+              
           </div>
+          <form class="chat-form">
+               <div class="input-group d-flex p-4 m-0">
+                    <input class="flex-grow-1" type="text" id="chatInput" placeholder="Write a message..."
+                         aria-label="Recipient's username" aria-describedby="button-addon2" required autocomplete="off">
+
+                    <div class="input-group-append">
+                         <button type="submit" class="send-button"><i
+                                   class="fas fa-arrow-circle-right send-icon"></i></button>
+                    </div>
+               </div>
+          </form>
+          {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
+
      </div>
 </div>
+<div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
-     integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="/assets/javascript/main.js"></script>
-<script src="/assets/javascript/logout.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+          integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+     <script src="/socket.io/socket.io.js"></script>
+     <script src="/assets/javascript/main.js"></script>
+     <script src="/assets/javascript/logout.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>

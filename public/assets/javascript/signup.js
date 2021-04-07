@@ -1,17 +1,16 @@
 
-
+	
+	let alert = document.createElement("i");
 async function signupFormHandler(event) {
 	event.preventDefault();
 
 	const username = document.querySelector("#username-signup").value.trim();
-	
 	const password = document.querySelector("#password-signup").value.trim();
-	
-	let alert = document.createElement("i");
+
 	alert.className = "fas fa-exclamation-circle errror-icon";
-	alert.setAttribute('data-bs-toggle','tooltip')
-	alert.setAttribute('data-bs-placement','top')
-	alert.setAttribute('title','test')
+	// alert.setAttribute('data-bs-toggle','tooltip')
+	// alert.setAttribute('data-bs-placement','top')
+	// alert.setAttribute('title','test')
 	
 
 	if (username  && password) {
