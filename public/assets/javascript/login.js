@@ -36,6 +36,7 @@ async function loginFormHandler(event) {
 					})
 				);
 				document.location.replace("/");
+				document.location.reload()
 			});
 	}
 }

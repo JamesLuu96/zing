@@ -106,7 +106,7 @@ document.querySelector("#room-users ul").append(list);
 if (window.performance) {
 	let room_id = getRoomId();
 	fetchChatHistory(room_id);
-	deleteOldHistory(room_id);
+	// deleteOldHistory(room_id);
 }
 function fetchChatHistory(room_id) {
 	fetch(`/api/chats/${room_id}`, {
