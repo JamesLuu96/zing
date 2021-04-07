@@ -8,16 +8,14 @@ function openTab(tabName) {
 	}
 	document.getElementById(tabName).style.display = "block";
 }
-
+let alert = document.createElement("i");
 
 async function loginFormHandler(event) {
 	event.preventDefault();
-	let alert = document.createElement("p");
-	alert.className = "error-input";
-		
+	alert.className="fas fa-exclamation-circle errror-icon";
 	const username = document.querySelector("#username").value.trim();
 	const password = document.querySelector("#password-login").value;
-	console.log(username, password)
+
 	if (username && password) {
 		const response = await fetch("/api/users/login", {
 			method: "post",
@@ -40,9 +38,8 @@ async function loginFormHandler(event) {
 				);
 				document.location.replace("/");
 			}).catch(err=>{
-				alert.textContent = "Please check your user name and password!!";
 				document.body.appendChild(alert);
-			
+		
 			})
 	}
 }

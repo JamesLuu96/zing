@@ -123,13 +123,8 @@ label {
 	position: relative;
 }
 
-.error-input {
-	text-align: center;
-	vertical-align:center;
-	margin-top:-300px;
-	color:red;
-	
-}
+{
+
 .room-info .trash {
 	position: absolute;
 	color: rgb(189, 47, 47);

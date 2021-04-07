@@ -7,11 +7,13 @@ async function signupFormHandler(event) {
 	
 	const password = document.querySelector("#password-signup").value.trim();
 	
-	let alert = document.createElement("p");
-	alert.className = "error-input";
+	let alert = document.createElement("i");
+	alert.className = "fas fa-exclamation-circle errror-icon";
+	alert.setAttribute('data-bs-toggle','tooltip')
+	alert.setAttribute('data-bs-placement','top')
+	alert.setAttribute('title','test')
 	
-  
-	
+
 	if (username  && password) {
 		const response = await fetch("/api/users", {
 			method: "post",
@@ -36,8 +38,7 @@ async function signupFormHandler(event) {
 			document.location.replace("/");
 			
 		}).catch(err=>{
-			// alert.textContent = "User already exsist please change your user name!!!";
-			// document.body.appendChild(alert);
+			document.body.appendChild(alert);
 			
 		})
 	}
