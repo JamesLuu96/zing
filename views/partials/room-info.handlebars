@@ -1,5 +1,5 @@
 <div class="room-info" data-id="{{id}}">
-  {{#if (check_room @root.myUser user.username)}}<i class="trash fas fa-trash-alt" data-id="{{id}}"></i>{{/if}}
+  {{#if (check_room user.username @root.myUser)}}<i class="trash fas fa-trash-alt" data-id="{{id}}"></i>{{/if}}
   <a href="{{id}}" data-id="{{id}}" class="list-group-item list-group-item-action pl-4 m-0">
     <div class="d-flex justify-content-between">
       <div>
@@ -15,6 +15,6 @@
     </div>
   </a>
 </div>
-{{#if (check_room @root.myUser user.username)}}
+{{#if (check_room user.username @root.myUser)}}
 <script src="/assets/javascript/delete-room.js"></script>
 {{/if}}
