@@ -54,7 +54,7 @@ li.angry {
 	color: red;
 }
 
-li.the-upside-down {
+li.backwards {
 	-moz-transform: scale(-1, 1);
 	-webkit-transform: scale(-1, 1);
 	-o-transform: scale(-1, 1);
