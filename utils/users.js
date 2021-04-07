@@ -8,7 +8,7 @@ const users = [];
 function userJoin(id, username, room) {
 	const user = { id, username, room };
 	users.push(user);
-	console.table(users)
+	// console.table(users)
 	return user;
 }
 
