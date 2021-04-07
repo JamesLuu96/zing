@@ -1,4 +1,4 @@
-<div class="room-info">
+<div class="room-info" data-id="{{id}}">
   {{#if (check_room @root.myUser user.username)}}<i class="trash fas fa-trash-alt" data-id="{{id}}"></i>{{/if}}
   <a href="{{id}}" data-id="{{id}}" class="list-group-item list-group-item-action pl-4 m-0">
     <div class="d-flex justify-content-between">

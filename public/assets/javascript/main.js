@@ -3,6 +3,7 @@ const chatInput = document.querySelector('#chatInput')
 const chatBox = document.querySelector('#chatBox')
 const socket = io()
 const roomId = document.querySelector('.chat-room-title').getAttribute('data-id')
+console.log(roomId)
 const form = document.querySelector('.chat-form')
 const feedback = document.getElementById('feedback')
 const type_name = document.querySelector(".chat-room-type").textContent;

@@ -20,7 +20,6 @@ module.exports = {
         .split('?')[0];
     },
     check_room: (room_username, username) => {
-      console.log(room_username, username)
         if(room_username === username){
           return true
         } else{
