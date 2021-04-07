@@ -23,6 +23,12 @@ function alterMessage(chatEl) {
 		chatEl.classList.add("tiny");
 	} else if (type_name === "angry") {
 		chatEl.classList.add("angry");
+	} else if (type_name === "backwards") {
+		chatEl.classList.add("backwards");
+	} else if (type_name === "excited") {
+		chatEl.classList.add("excited");
+	} else if (type_name === "blurry") {
+		chatEl.classList.add("blurry");
 	}
 }
 
