@@ -47,6 +47,7 @@ const hbs = exphbs.create({
 })
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+const botName = "zingBot"
 
 // socket.handshake.session
 io.on('connection', socket => {
@@ -57,15 +58,14 @@ io.on('connection', socket => {
 
         socket.to(data.roomId).emit('joinRoom', user)
 
-        socket.emit('message', "You entered the room.")
+        socket.emit('message', {user: botName , message:"You entered the room"})
         console.log('joined')
      
 
-        socket.broadcast.to(data.roomId).emit('message', `${user.username} entered the room.`)
+        socket.broadcast.to(data.roomId).emit('message', {user:botName, message:`${user.username} entered the room`})
 
         socket.on('chatMessage', (message) => {
-            console.log(message, "this is new message")
-            io.to(data.roomId).emit('message', user.username + ": " + message)
+            io.to(data.roomId).emit('message', {user: user.username, message})
         })
 
         socket.on('typing', function(data) {
@@ -74,7 +74,7 @@ io.on('connection', socket => {
 
         socket.on('disconnect', () => {
             userLeave(socket.id)
-            io.to(data.roomId).emit('message', user.username + ' left the room.')
+            io.to(data.roomId).emit('message', {user: botName, message:' left the room'})
             io.to(data.roomId).emit('leaveRoom', user)
             console.log('left')
         })
