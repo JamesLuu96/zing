@@ -1,6 +1,5 @@
+myStorage = window.sessionStorage;
 
- myStorage = window.sessionStorage;
- 
 function openTab(tabName) {
 	var i;
 	var x = document.getElementsByClassName("form");
@@ -24,25 +23,23 @@ async function loginFormHandler(event) {
 				password,
 			}),
 			headers: { "Content-Type": "application/json" },
-		}).then(data=>{
-			return data.json()
-		
-			// document.location.replace("/");
-		}).then(data=>{
-	  	sessionStorage.setItem('userInfo', JSON.stringify({username:data.user.username,user_id:data.user.id}));
-		  document.location.replace("/");
 		})
-
-		// if (response.ok) {
-		// 	
-		// } else {
-		// 	document.location.reload()
-		// }
+			.then((data) => {
+				return data.json();
+			})
+			.then((data) => {
+				sessionStorage.setItem(
+					"userInfo",
+					JSON.stringify({
+						username: data.user.username,
+						user_id: data.user.id,
+					})
+				);
+				document.location.replace("/");
+			});
 	}
 }
-
 
 document
 	.querySelector(".login-form")
 	.addEventListener("submit", loginFormHandler);
-

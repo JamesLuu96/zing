@@ -1,39 +1,44 @@
-
-.wrapper{
-     background-color:#f4f5fb;
-     height:100vh;
+.wrapper {
+	background-color: #f4f5fb;
+	height: 100vh;
 }
-#topbar {
-     min-width:100%;
-     background-color: rgb(49, 49, 49);
-     color: white;
-     margin-right: 0px;
-     height:50px;
+#subnav {
+	min-width: 100%;
+	background-color: rgb(49, 49, 49);
+	color: white;
 }
-#room-users{
-     margin:3.2% 0 0 2.5%;
-     border:2px solid #fff;
-     height:75vh;
+#room-users {
+	margin: 3.2% 0 0 2.5%;
+	border: 2px solid #fff;
 }
-#room-users li{
-     border-bottom: 2px solid #fff;
-     padding:1rem;
-     list-style: none;
+#room-users li {
+	border-bottom: 2px solid #fff;
+	padding: 1rem;
+	list-style: none;
+}
+#feedback {
+	height: 30px;
+}
+.chat-form {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #chatBox {
-     background-color:#fff;
-     height: 75vh;
-    margin:3rem 5% 0 0;
-    overflow-y: scroll;
-     
+	background-color: #fff;
+	height: 50vh;
+	margin: 3rem 5% 0 0;
+	overflow-y: scroll;
 }
-.input-group{
-     margin:-35px -20px 0 -19px;
-     width:103%;
-     border-right:0;
-     position: relative;
+#chat-input {
+	box-shadow: 0 0 2px 0 12px #edeef8;
+	width: 100%;
+	border-bottom: 1px solid #e2e2e2;
 }
 
+<<<<<<< HEAD
 #insert-image{
      font-size: 1.4rem;
      border-right:0;
@@ -51,3 +56,14 @@
 #chatInput{
      min-width: 300%;
 }
+=======
+#chatInput {
+	margin: 10px;
+	padding: 4px;
+	width: 500px;
+}
+
+li.tiny {
+	font-size: 200px;
+}
+>>>>>>> feature/flo

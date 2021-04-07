@@ -1,24 +1,21 @@
 <link rel="stylesheet" href="/assets/css/chatroom1.css">
-<nav class="navbar navbar-expand-lg navbar-light" id="topbar">
-     <h2 class="chat-room-title" data-id="{{id}}">CHAT ROOM {{id}}</h2>
-     <span class="active-room"></span>
-     <button class="logout">Leave</button>
+
+
+<nav class="navbar navbar-expand-lg" id="subnav">
+     <h2 class="chat-room-title pl-5" data-id="{{id}}">{{room.room_name}}</h2>
+     <h3 class="chat-room-type pl-5">{{room.type.type_name}}</h3>
 </nav>
 
 <div class="row wrapper">
-     {{!-- col-4 col-sm-3 col-md-2 --}}
      <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3" id="room-users">
+<<<<<<< HEAD
           <h2>Users</h2>
+=======
+          <h2>Current Users:</h2>
+>>>>>>> feature/flo
           <ul>
-               <li>
-                    <i class="far fa-user pull-right mr-2" id=""></i>Helen
-               </li>
-               <li>
-                    <i class="far fa-user pull-right mr-2" id=""></i>fasika
-               </li>
           </ul>
      </div>
-     {{!-- col-8 col-sm-6 col-md-4 --}}
      <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7">
           <div class="">
                <div class="row">
@@ -31,13 +28,13 @@
           </div>
           <div class="">
                <div class="input-group mb-3">
+                    <div id="feedback"></div>
                     <form class="chat-form">
-                         <input type="text" id="chatInput" class="form-control" placeholder="Enter Message Here"
+                         <input type="text" id="chatInput" placeholder="Enter Message Here"
                               aria-label="Recipient's username" aria-describedby="button-addon2" required>
-                         <div id="feedback"></div>
-                         <button type="submit">Send</button>
-                         <label for="image-upload"><i class="fas fa-camera" id="insert-image"></i></label>
-                         <input type="file" id="image-upload">
+                         <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
+                         {{!-- <label for="image-upload"><i class="fas fa-camera" id="insert-image"></i></label>
+                         <input type="file" id="image-upload"> --}}
                     </form>
                     {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
                </div>

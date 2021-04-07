@@ -1,66 +1,48 @@
-<!-- Top Bar -->
-<nav class="navbar navbar-expand-lg navbar-light" id="topbar">
-     <h2>CHAT</h2>
-     <button class="logout">logout</button>
-</nav>
-
-<!-- Left Bar -->
-<div class="row" id="roomTitle">
-     <h2 class="ml-4">Chat Rooms</h2>
+<div class="container-fluid m-0 p-0">
+  <div class="row m-0">
+    <!-- Left Bar -->
+    <div class="col-md-8 p-0">
+      <!-- create new room form -->
+      <form id="chat-input" class="p-4">
+        <div class="row align-items-end">
+          <div class="col" id="holder">
+            <label for="room-name">Room name</label>
+            <input id="room-name" class="form-control pt-3" type="text" placeholder="Enter room name">
+          </div>
+          <div class="col" id="holder">
+            <label for="room-type">Room type</label>
+            <select id="room-type" class="form-control pt-3">
+                  {{#each types}}
+       <option value="{{id}}">{{type_name}}</option>
+      {{/each}}
+            
+            </select>
+          </div>
+          <div class="col">
+            <button class="btn" type="submit" id="create-new">Create</button>
+          </div>
+        </div>
+      </form>
+      <!-- list existing rooms -->
+      <div class="room-list p-4">
+      {{#each rooms}}
+        {{> room-info }}
+      {{/each}}
+      </div>
+    </div>
+    <!-- Left Bar ENDS -->
+    
+    <!-- Sidenav of online users -->
+    <div class="col p-4 d-none d-md-block sidenav">
+      <div>
+        <h5>Online Users</h4>
+      </div>
+     {{#each rooms}}
+        {{> online-user }}
+      {{/each}}
+    </div>
+  </div>
 </div>
 
-<div class="container room-container">
-     <div class="row">
-          <div class="col-sm-12">
-               <form class="input-group mb-3" id="chatInput">
-                    <input type="text" class="room-name form-control" placeholder="New chat room"
-                         aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary ml-2" type="submit" id="button-addon2">Create</button>
-               </form>
-               {{#each rooms}}
-               <a href="/{{id}}">
-
-                    <div class="row d-flex justify-content-between" id="room">
-                         <div>
-                              <span class="badge badge-info username-badge">{{user.username}}</span>
-                              {{room_name}}
-                         </div>
-                         <div>
-                              <span class="badge badge-info pull-right roomUser p-2">
-                                   <i class="far fa-user pull-right" id="roomicon"><span class="ml-2">{{getRoomUsers
-                                             id}}</span></i>
-                              </span>
-
-
-                         </div>
-                    </div>
-               </a>
-               {{/each}}
-
-          </div>
-          <div class="col-sm-4">
-               <div class="sidenav">
-                    <div class="" id="usernameTitle">
-                         <h2>Online Users</h2>
-                    </div>
-                    {{#each rooms}}
-                    <div class="d-flex justify-content-between pr-4" id="username">
-                         <span><i class="fas fa-user-secret mr-3"></i>{{user.username}} </span>
-                         <span><i class="fas fa-circle online-users"></i></span>
-                    </div>
-                    {{/each}}
-               </div>
-          </div>
-     </div>
-</div>
-
-<script src="/assets/javascript/logout.js"></script>
 <script src="/assets/javascript/add-room.js"></script>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-     crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-     crossorigin="anonymous"></script>
+{{!-- <script src="/assets/javascript/main.js"></script> --}}
