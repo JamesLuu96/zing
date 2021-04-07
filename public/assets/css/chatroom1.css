@@ -32,14 +32,18 @@ ul {
 	border: none;
 	outline: none;
 }
-
+.chat-form{
+	margin-top:-20px;
+}
 .chat-form button {
 	height: 100%;
+	background-color: transparent;
+	border: none;
 }
 
 .chat-wrapper {
 	background-color: #fff;
-	border: 1px solid gray;
+	border: 1px solid #d3d3d3;
 	height: 70vh;
 }
 #chatContainer {
@@ -47,7 +51,12 @@ ul {
 }
 #chatBox {
 	overflow-y: scroll;
-	border-bottom: 1px solid gray;
+	height:60vh;
+	border-bottom: 1px solid #d3d3d3;
+}
+.send-icon{
+color:#4356adc9;
+	font-size: 30px;
 }
 
 #chatList li:nth-child(odd),

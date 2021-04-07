@@ -40,12 +40,11 @@ body{
     color:red;
     
   }
- 
-  
   
   .box input[type = "text"]:focus,.box input[type = "password"]:focus{
     width: 280px;
     border-color: #2ecc71;
+    background-color: #e6e6e6;
   }
   .box input[type = "submit"]{
     border:0;

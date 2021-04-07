@@ -21,7 +21,7 @@ const {
 	getUsersInRoom,
 	users,
 	getAllUsersInRoom,
-	getUsers
+	getUsers,
 } = require("./utils/users");
 
 const sess = {
@@ -70,7 +70,10 @@ io.on("connection", (socket) => {
         socket.broadcast.to(data.roomId).emit('message', {user:botName, message:`${user.username} entered the room`})
 		
         socket.on('chatMessage', (message) => {
+		
 			io.to(data.roomId).emit('message', {user: user.username, message})
+			
+			
         })
 		
 		socket.on("typing", function (data) {

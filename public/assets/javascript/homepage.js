@@ -32,6 +32,7 @@ socket.on('getUsers', function(usersArray){
     })
 })
 
+
 {/* <div class="d-flex justify-content-between pr-4" id="username">
   <span><i class="fas fa-user-secret mr-3"></i>{{user.username}} </span>
   <span><i class="fas fa-circle online-users"></i></span>

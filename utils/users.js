@@ -1,7 +1,9 @@
+
 // const users = [{ id:7, username:"username", room:2 },{ id:7, username:"username", room:2 },{ id:7, username:"username", room:2 },{ id:7, username:"username", room:1 }];
 const users = [];
 console.log(users);
 // Join user to chat
+
 
 function userJoin(id, username, room) {
 	const user = { id, username, room };
@@ -58,5 +60,6 @@ module.exports = {
 	getRoomUsers,
 	getUsersInRoom,
 	getAllUsersInRoom,
-	getUsers
+	getUsers,
+
 };
