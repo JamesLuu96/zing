@@ -97,7 +97,7 @@ function outputMessage(message) {
 	feedback.innerHTML = "";
 }
 
-socket.on('leaveRoom', ()=>{
+socket.on('leaveRoomFromDelete', ()=>{
     document.location.replace("/");
 })
 

@@ -81,7 +81,7 @@ io.on("connection", (socket) => {
 		});
 
 		socket.on("deleteRoom", (roomId)=>{
-			io.to(roomId).emit('leaveRoom')
+			io.to(roomId).emit('leaveRoomFromDelete')
 		})
 
 		socket.on("refreshPage", ()=>{
