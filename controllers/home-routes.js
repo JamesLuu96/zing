@@ -4,9 +4,10 @@ const { Room, User, Type } = require("../models");
 const path = require("path");
 const { users } = require("../utils");
 const withAuth = require("../utils/auth");
-// get all rooms for homepage
 
+// get all rooms for homepage
 router.get("/", withAuth, (req, res) => {
+	let roomsData;
 	console.log("======================");
 	Room.findAll({
 		attributes: ["id", "room_name", "type_id", "user_id", "created_at"],
@@ -22,11 +23,20 @@ router.get("/", withAuth, (req, res) => {
 		],
 	})
 		.then((dbRoomData) => {
-			rooms = dbRoomData.map((x) => x.get({ plain: true }));
-			res.render("homepage", {
-				rooms,
-				users: users,
-				loggedIn: req.session.loggedIn,
+			roomsData = dbRoomData.map((x) => x.get({ plain: true }));
+		})
+		.then(() => {
+			Type.findAll({
+				attributes: ["id", "type_name"],
+			}).then((dbTypeData) => {
+				const types = dbTypeData.map((type) => type.get({ plain: true }));
+				res.render("homepage", {
+					types,
+					rooms: roomsData,
+					users: users,
+					loggedIn: req.session.loggedIn,
+				});
+				console.log(types);
 			});
 		})
 		.catch((err) => {
@@ -67,6 +77,7 @@ router.get("/:id", withAuth, (req, res) => {
 				return;
 			}
 			const room = dbRoomData.get({ plain: true });
+			console.log(room);
 			res.render("chatroom", {
 				room,
 				loggedIn: req.session.loggedIn,
