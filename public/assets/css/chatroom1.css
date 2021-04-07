@@ -1,95 +1,74 @@
-
-body{
-	background-color: #f4f5fb;	
+body {
+	background-color: #f4f5fb;
 	overflow-x: hidden;
+	overflow: hidden;
 }
 .wrapper {
-	
 	height: 100vh;
+	width: 80%;
+	margin: 0 auto;
 }
+
 #subnav {
 	min-width: 100%;
+	border-bottom: 1px solid #e2e2e2;
 	/* color: white; */
 }
-#room-users {
-	margin: 3.2% 0 0 2.5%;
-	
-}
+
 #room-users li {
 	border-bottom: 2px solid #fff;
 	padding: 1rem;
 	list-style: none;
 }
-.current-users-icon{
-	font-size:1.5rem;
-}
-#feedback {
-	height: 30px;
-	margin-top: -28px;
-}
-.chat-form {
-	width: 100%;
-	height: 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.chat-form button{
-position: absolute;
-right:1px;
-top:2px;
-border:none;
-background-color:#fff;
-}
-.chat-form button i {
-	margin: 8px 10px 0 0;
-	
-}
 
-#chatBox {
-	background-color: #fff;
-	height: 70vh;
-	overflow-y: scroll;
-	
-	
-}
-#chat-input {
-	box-shadow: 0 0 2px 0 12px #edeef8;
-	width: 100%;
-	border-bottom: 1px solid #e2e2e2;
+.current-users-icon {
+	font-size: 1.5rem;
 }
 
 #chatInput {
-	margin-top: -4rem;
-	padding: 10px;
-	width:150%;
-	border:none;
+	border: none;
 	outline: none;
 }
-#chatList li:nth-child(odd),#chatList li:nth-child(even){
-	padding:10px;
-	word-wrap:break-word;
+
+.chat-form button {
+	height: 100%;
+}
+
+.chat-wrapper {
+	background-color: #fff;
+	border: 1px solid gray;
+	height: 70vh;
+}
+#chatContainer {
+	height: 62vh;
+}
+#chatBox {
+	overflow-y: scroll;
+	border-bottom: 1px solid gray;
+}
+
+#chatList li:nth-child(odd),
+#chatList li:nth-child(even) {
+	padding: 10px;
+	word-wrap: break-word;
 	border-radius: 12px;
 }
 #chatList .chatName {
 	margin: 0;
 }
-#chatList li.theirs{
-	background-color:#f4f4f4;
+#chatList li.theirs {
+	background-color: #f4f4f4;
 	display: inline-block;
 	margin-right: 150px;
-	
 }
-.your-message{
+.your-message {
 	text-align: right;
 }
-#chatList li.yours{
-	background-color:#4356adc9;
+#chatList li.yours {
+	background-color: #4356adc9;
 	display: inline-block;
-	color:#fff;
-	
+	color: #fff;
 }
-
 
 li.tiny {
 	font-size: 8px;
@@ -118,33 +97,22 @@ li.blurry {
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.chat-room-type-and-name {
-
-text-align: right;
-margin-right:6%;
-padding:10px;
-font-weight: 600;
+.chat-room-owner {
+	font-size: 18px;
+	font-weight: 500;
 }
 
-.chat-wrapper{
-
+.chat-wrapper {
 }
 
-
-.tiny-background{
-
-
+.tiny-background {
 }
-.backwards-background{
-	
+.backwards-background {
 }
 
-.excited-background{
-
+.excited-background {
 }
-.angry-background{
-
+.angry-background {
 }
-.blurry-background{
-	
+.blurry-background {
 }
