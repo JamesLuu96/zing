@@ -88,6 +88,6 @@ li.excited::after {
 }
 
 li.blurry {
-	color: transparent;
+	color: transparent !important;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
