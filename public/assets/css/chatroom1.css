@@ -27,10 +27,10 @@
 	align-items: center;
 }
 #chatBox {
-     background-color:#fff;
-     height: 50vh;
-    margin:3rem 5% 0 0;
-    overflow-y: scroll;
+	background-color: #fff;
+	height: 50vh;
+	margin: 3rem 5% 0 0;
+	overflow-y: scroll;
 }
 #chat-input {
 	box-shadow: 0 0 2px 0 12px #edeef8;
@@ -38,7 +38,7 @@
 	border-bottom: 1px solid #e2e2e2;
 }
 
-#chatInput{
+#chatInput {
 	margin: 10px;
 	padding: 4px;
 	width: 500px;
@@ -63,4 +63,31 @@
 	background-color:#4356adda;
 	display: inline-block;
 	color:#fff;
+}
+
+li.tiny {
+	font-size: 8px;
+}
+
+li.angry {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: red;
+}
+
+li.backwards {
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+li.excited::after {
+	content: "!!!!!!!!!!!!!!!!!!!!!!!!";
+}
+
+li.blurry {
+	color: transparent;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }

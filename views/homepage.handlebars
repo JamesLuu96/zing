@@ -12,7 +12,10 @@
           <div class="col" id="holder">
             <label for="room-type">Room type</label>
             <select id="room-type" class="form-control pt-3">
-            <option>Select room type</option>
+                  {{#each types}}
+       <option value="{{id}}">{{type_name}}</option>
+      {{/each}}
+            
             </select>
           </div>
           <div class="col">
