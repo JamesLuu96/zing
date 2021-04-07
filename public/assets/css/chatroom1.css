@@ -12,7 +12,6 @@ body {
 #subnav {
 	min-width: 100%;
 	border-bottom: 1px solid #e2e2e2;
-	/* color: white; */
 }
 
 ul {
@@ -26,6 +25,7 @@ ul {
 
 .current-users-icon {
 	font-size: 1.2rem;
+	color:#189c35;
 }
 
 #chatInput {
@@ -64,8 +64,9 @@ color:#4356adc9;
 }
 #feedback p{
 	margin-top:-45px;
-	margin-left:5rem;
+	margin-left:4rem;
 	color:#6CAD96;
+	font-size: 14px;;
 	
 }
 #chatList li:nth-child(odd),
@@ -148,7 +149,6 @@ li.blurry {
 	top:78%;
 	left:3%;
 	padding:18px 40px;
-	
   }
   .typing {
 	align-items: center;
@@ -158,10 +158,10 @@ li.blurry {
   .typing .dot {
 	animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
 	border-radius: 50%;
-	height: 7px;
+	height: 4px;
 	margin-right: 4px;
 	vertical-align: middle;
-	width: 7px;
+	width: 3px;
 
 	display: inline-block;
   }
