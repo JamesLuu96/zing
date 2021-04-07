@@ -116,5 +116,20 @@ label {
 	height: 100%;
 }
 
+.room-info {
+	position: relative;
+}
 
+.room-info .trash {
+	position: absolute;
+	color: rgb(189, 47, 47);
+	z-index: 999;
+	right: 0;
+	top: 30%;
+	margin-right: 5px;
+}
 
+.room-info .trash:hover{
+	cursor: pointer;
+	color: rgb(117, 38, 38);
+}

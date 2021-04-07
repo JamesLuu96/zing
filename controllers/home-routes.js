@@ -35,8 +35,8 @@ router.get("/", withAuth, (req, res) => {
 					rooms: roomsData,
 					users: users,
 					loggedIn: req.session.loggedIn,
+					myUser: req.session.username
 				});
-				console.log(types);
 			});
 		})
 		.catch((err) => {
@@ -81,6 +81,7 @@ router.get("/:id", withAuth, (req, res) => {
 			res.render("chatroom", {
 				room,
 				loggedIn: req.session.loggedIn,
+				myUser: req.session.username
 			});
 		})
 		.catch((err) => {
