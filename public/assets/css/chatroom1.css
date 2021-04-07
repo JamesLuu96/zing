@@ -159,6 +159,9 @@ font-weight: 600;
 	#user-icon {
 		display: none;
 	}
+	#room-users i {
+		display: none;
+	}
 
 }
 @media screen and (max-width: 980px) {
@@ -170,10 +173,15 @@ font-weight: 600;
 	}
 }
 @media screen and (max-width: 768px) {
-
+	.chat-room-owner, .chat-room-title, .chat-room-type {
+		font-size: 20px;
+	}
 }
 @media screen and (max-width: 575px) {
 	#room-users {
 		visibility: hidden;
+	}
+	.chat-room-owner, .chat-room-title, .chat-room-type {
+		font-size: 14px;
 	}
 }
