@@ -4,9 +4,10 @@
      <div class="col pl-5">
           <h1 class="chat-room-title" data-id="{{room.id}}">{{room.room_name}}</h1>
      </div>
-     <div class="col pr-5">
-          <p class="chat-room-owner text-right"> <span class="chat-room-type">{{room.type.type_name}}</span> room
-               created by {{room.user.username}}</p>
+     <div class="col pr-4  subnav-user">
+          <p class="chat-room-owner text-right"> <span class="chat-room-type">{{room.type.type_name}}</span>
+               <i class="fas fa-user-edit pl-2"></i> {{room.user.username}}
+          </p>
      </div>
      {{#if (check_room room.user.username myUser)}}<button class="trash">Delete Room</button>{{/if}}
 </div>
@@ -34,7 +35,7 @@
 
                <div id="feedback">
                </div>
-              
+
           </div>
           <form class="chat-form">
                <div class="input-group d-flex p-4 m-0">

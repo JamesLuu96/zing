@@ -13,7 +13,12 @@ body {
 	min-width: 100%;
 	border-bottom: 1px solid #e2e2e2;
 }
-
+.subnav-user{
+	margin-right:7rem;
+}
+.subnav-user i{
+	color:#458B00
+}
 ul {
 	padding: 0;
 }
@@ -22,10 +27,13 @@ ul {
 	padding: 1rem;
 	list-style: none;
 }
-
+#room-users li i {
+	color:#458B00;
+	
+}
 .current-users-icon {
 	font-size: 1.2rem;
-	color:#189c35;
+	color:#458B00;
 }
 
 #chatInput {
