@@ -20,6 +20,8 @@ const {
 	getRoomUsers,
 	getUsersInRoom,
 	users,
+	getAllUsersInRoom,
+	getUsers
 } = require("./utils/users");
 
 const sess = {
@@ -59,27 +61,31 @@ io.on("connection", (socket) => {
 		socket.join(data.roomId);
 		socket.emit("currentUsers", getUsersInRoom(data.roomId));
 		const user = userJoin(socket.id, data.username, data.roomId);
-
+		
 		socket.to(data.roomId).emit("joinRoom", user);
-
+		
         socket.emit('message', {user: botName , message:"You entered the room"})
-        console.log('joined')
-     
-
+		
+		
         socket.broadcast.to(data.roomId).emit('message', {user:botName, message:`${user.username} entered the room`})
-
+		
         socket.on('chatMessage', (message) => {
-            io.to(data.roomId).emit('message', {user: user.username, message})
+			io.to(data.roomId).emit('message', {user: user.username, message})
         })
-
+		
 		socket.on("typing", function (data) {
 			socket.broadcast.emit("typing", user.username);
 		});
+		
+		io.to("lobby").emit('renderRooms', getAllUsersInRoom())
+		io.to("lobby").emit('getUsers', getUsers())
 
         socket.on('disconnect', () => {
             userLeave(socket.id)
             io.to(data.roomId).emit('message', {user: botName, message:' left the room'})
             io.to(data.roomId).emit('leaveRoom', user)
+			io.to("lobby").emit('renderRooms', getAllUsersInRoom())
+			io.to("lobby").emit('getUsers', getUsers())
             console.log('left')
         })
     })

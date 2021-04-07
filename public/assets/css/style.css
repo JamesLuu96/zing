@@ -120,10 +120,27 @@ label {
 	height: 100%;
 }
 
+.room-info {
+	position: relative;
+}
 
 .error-input {
 	text-align: center;
 	vertical-align:center;
 	margin-top:-300px;
 	color:red;
+	
+}
+.room-info .trash {
+	position: absolute;
+	color: rgb(189, 47, 47);
+	z-index: 999;
+	right: 0;
+	top: 30%;
+	margin-right: 5px;
+}
+
+.room-info .trash:hover{
+	cursor: pointer;
+	color: rgb(117, 38, 38);
 }

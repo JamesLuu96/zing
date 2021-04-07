@@ -2,104 +2,33 @@ const { Room } = require('../models');
 
 const postdata = [
   {
-    room_name: 'Testing',
-    type_id: 2,
+    room_name: 'Blurry',
+    type_id: 3,
     user_id: 10
   },
   {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 8
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
+    room_name: 'Default',
     user_id: 1
   },
   {
-    room_name: 'Testing',
-    type_id: 2,
+    room_name: 'teeny-tiny',
+    type_id: 4,
     user_id: 4
   },
   {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 7
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 4
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 1
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 1
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 9
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 5
-  },
-  {
-    room_name: 'Testing',
+    room_name: 'excite',
     type_id: 2,
     user_id: 3
   },
   {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 10
+    room_name: 'angERRY',
+    type_id: 5,
+    user_id: 1
   },
   {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 8
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 3
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 3
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 7
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 6
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 4
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 6
-  },
-  {
-    room_name: 'Testing',
-    type_id: 2,
-    user_id: 7
+    room_name: 'backwaRDS',
+    type_id: 6,
+    user_id: 1
   }
 ];
 

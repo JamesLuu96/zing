@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="/assets/css/chatroom1.css">
 
-<div class="chat-room-type-and-name">
-     <i class="fal fa-comment-edit"></i>
-     <span class="chat-room-title pl-5" data-id="{{id}}">{{room.room_name}}</span>
-     <span class="chat-room-type pl-5">{{room.type.type_name}}</span>
+
+<div class="navbar navbar-expand-lg" id="subnav">
+     <h2 class="chat-room-owner">{{room.user.username}}'s Room</h2>
+     <h3 class="chat-room-type pl-5">{{room.type.type_name}}</h3>
+     {{#if (check_room room.user.username myUser)}}<button class="trash">Delete Room</button>{{/if}}
 </div>
 
 <div class="row wrapper">
@@ -13,7 +14,8 @@
 
           </ul>
      </div>
-     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-8">
+     <h2 class="chat-room-title pl-5" data-id="{{room.id}}">{{room.room_name}}</h2>
+     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7 chat-wrapper">
           <div class="">
                <div class="row">
                     <div class="col-12" id="chatBox">

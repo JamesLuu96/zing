@@ -9,7 +9,7 @@ body{
 }
 #subnav {
 	min-width: 100%;
-	color: white;
+	/* color: white; */
 }
 #room-users {
 	margin: 3.2% 0 0 2.5%;
@@ -114,7 +114,7 @@ li.excited::after {
 }
 
 li.blurry {
-	color: transparent;
+	color: transparent !important;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -125,9 +125,10 @@ margin-right:6%;
 padding:10px;
 font-weight: 600;
 }
-/* .chat-room-type-and-name span{
-	
-} */
+
+.chat-wrapper{
+
+}
 
 
 .tiny-background{

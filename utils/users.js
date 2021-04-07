@@ -1,4 +1,4 @@
-// const users = [{id:1, username:'tpenniell7', room:1}];
+// const users = [{ id:7, username:"username", room:2 },{ id:7, username:"username", room:2 },{ id:7, username:"username", room:2 },{ id:7, username:"username", room:1 }];
 const users = [];
 console.log(users);
 // Join user to chat
@@ -26,19 +26,37 @@ function userLeave(id) {
 
 // Get room users
 function getUsersInRoom(room) {
-	console.log('getRoomUsers + ' + users)
 	return users.filter((user) => user.room === room);
 }
 
 function getRoomUsers(room) {
-	console.log('getRoomUsers + ' + users)
 	return users.filter((user) => user.room === room).length;
 }
+
+function getAllUsersInRoom(){
+	const userArray = []
+	const userCounts = {};
+	users.forEach((user)=>{
+		userCounts[user.room] = (userCounts[user.room] + 1) || 1
+	});
+	for(key in userCounts){
+		userArray.push({roomId: key, onlineUsers: userCounts[key]})
+	}
+	console.log(userArray)
+	return userArray
+}
+
+function getUsers(){
+	return users
+}
+
 
 module.exports = {
 	userJoin,
 	getCurrentUser,
 	userLeave,
 	getRoomUsers,
-	getUsersInRoom
+	getUsersInRoom,
+	getAllUsersInRoom,
+	getUsers
 };
