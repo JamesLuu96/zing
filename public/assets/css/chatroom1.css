@@ -15,6 +15,9 @@ body {
 	/* color: white; */
 }
 
+ul {
+	padding: 0;
+}
 #room-users li {
 	border-bottom: 2px solid #fff;
 	padding: 1rem;
@@ -22,7 +25,7 @@ body {
 }
 
 .current-users-icon {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 #chatInput {
