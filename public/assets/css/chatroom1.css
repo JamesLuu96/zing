@@ -131,7 +131,11 @@ li.blurry {
 	font-size: 18px;
 	font-weight: 500;
 }
-
+.chat-room-title{
+	font-size: 2rem;
+	font-weight: 200;
+	margin-left: 7rem;
+}
 .chat-wrapper {
 }
 
