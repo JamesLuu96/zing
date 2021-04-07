@@ -19,7 +19,7 @@ h1.navbar-brand {
 nav a {
 	font-size: 24px;
 	color: white;
-	transition: color .3s ease-in-out;
+	transition: color 0.3s ease-in-out;
 }
 
 .room-list {
@@ -31,13 +31,12 @@ nav a {
 	border-left: 1px solid #e2e2e2;
 }
 
-.list-group-item{
-	transition: background-color .3s ease-in-out;
+.list-group-item {
+	transition: background-color 0.3s ease-in-out;
 }
 .list-group-item:hover {
 	background-color: #fce9e9;
 	border-left: 4px solid #eb484d;
-	
 }
 
 .column-title {
@@ -56,12 +55,11 @@ h4 {
 .small-link {
 	color: #4357ad;
 	font-size: 20px;
-	
 }
 
 .small-link:hover {
 	text-decoration: none;
-	filter: brightness(50%)
+	filter: brightness(50%);
 }
 
 #logout {
@@ -146,4 +144,13 @@ label {
 .room-info .trash:hover {
 	cursor: pointer;
 	color: rgb(117, 38, 38);
+}
+
+.room-badge {
+	font-size: 16px;
+	font-weight: 400;
+	background-color: #4356adda;
+	color: white;
+	border-radius: 32px;
+	line-height: 16px;
 }
