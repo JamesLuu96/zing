@@ -1,21 +1,21 @@
 <link rel="stylesheet" href="/assets/css/chatroom1.css">
 
 
-<nav class="navbar navbar-expand-lg" id="subnav">
+<div class="navbar navbar-expand-lg" id="subnav">
      <h2 class="chat-room-owner">{{room.user.username}}'s Room</h2>
-     
      <h3 class="chat-room-type pl-5">{{room.type.type_name}}</h3>
      {{#if (check_room room.user.username myUser)}}<button class="trash">Delete Room</button>{{/if}}
-</nav>
+</div>
 
 <div class="row wrapper">
      <div class="col-2 col-sm-4 col-md-2 col-lg-2 col-xl-3" id="room-users">
-          <h2>Current Users:</h2>
+          <h2><i class="fas fa-users mr-2 current-users-icon"></i>Current Users:</h2>
           <ul>
+
           </ul>
      </div>
      <h2 class="chat-room-title pl-5" data-id="{{room.id}}">{{room.room_name}}</h2>
-     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7">
+     <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-7 chat-wrapper">
           <div class="">
                <div class="row">
                     <div class="col-12" id="chatBox">
@@ -30,11 +30,10 @@
                <div class="input-group mb-3">
                     <div id="feedback"></div>
                     <form class="chat-form">
-                         <input type="text" id="chatInput" placeholder="Enter Message Here"
-                              aria-label="Recipient's username" aria-describedby="button-addon2" required autocomplete="off">
+                         <input type="text" id="chatInput" placeholder="Write a message..."
+                              aria-label="Recipient's username" aria-describedby="button-addon2" required
+                              autocomplete="off">
                          <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
-                         {{!-- <label for="image-upload"><i class="fas fa-camera" id="insert-image"></i></label>
-                         <input type="file" id="image-upload"> --}}
                     </form>
                     {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
                </div>

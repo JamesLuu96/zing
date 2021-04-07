@@ -1,23 +1,31 @@
+
+body{
+	background-color: #f4f5fb;	
+	overflow-x: hidden;
+}
 .wrapper {
-	background-color: #f4f5fb;
+	
 	height: 100vh;
 }
 #subnav {
 	min-width: 100%;
-	background-color: rgb(49, 49, 49);
-	color: white;
+	/* color: white; */
 }
 #room-users {
 	margin: 3.2% 0 0 2.5%;
-	border: 2px solid #fff;
+	
 }
 #room-users li {
 	border-bottom: 2px solid #fff;
 	padding: 1rem;
 	list-style: none;
 }
+.current-users-icon{
+	font-size:1.5rem;
+}
 #feedback {
 	height: 30px;
+	margin-top: -28px;
 }
 .chat-form {
 	width: 100%;
@@ -26,11 +34,24 @@
 	justify-content: center;
 	align-items: center;
 }
+.chat-form button{
+position: absolute;
+right:1px;
+top:2px;
+border:none;
+background-color:#fff;
+}
+.chat-form button i {
+	margin: 8px 10px 0 0;
+	
+}
+
 #chatBox {
 	background-color: #fff;
-	height: 50vh;
-	margin: 3rem 5% 0 0;
+	height: 70vh;
 	overflow-y: scroll;
+	
+	
 }
 #chat-input {
 	box-shadow: 0 0 2px 0 12px #edeef8;
@@ -39,9 +60,11 @@
 }
 
 #chatInput {
-	margin: 10px;
-	padding: 4px;
-	width: 500px;
+	margin-top: -4rem;
+	padding: 10px;
+	width:150%;
+	border:none;
+	outline: none;
 }
 #chatList li:nth-child(odd),#chatList li:nth-child(even){
 	padding:10px;
@@ -55,15 +78,18 @@
 	background-color:#f4f4f4;
 	display: inline-block;
 	margin-right: 150px;
+	
 }
 .your-message{
 	text-align: right;
 }
 #chatList li.yours{
-	background-color:#4356adda;
+	background-color:#4356adc9;
 	display: inline-block;
 	color:#fff;
+	
 }
+
 
 li.tiny {
 	font-size: 8px;
@@ -90,4 +116,35 @@ li.excited::after {
 li.blurry {
 	color: transparent !important;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.chat-room-type-and-name {
+
+text-align: right;
+margin-right:6%;
+padding:10px;
+font-weight: 600;
+}
+
+.chat-wrapper{
+
+}
+
+
+.tiny-background{
+
+
+}
+.backwards-background{
+	
+}
+
+.excited-background{
+
+}
+.angry-background{
+
+}
+.blurry-background{
+	
 }

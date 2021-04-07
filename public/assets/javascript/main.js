@@ -45,7 +45,21 @@ function alterMessage(chatEl) {
 		chatEl.classList.add("blurry");
 	}
 }
-
+function alterBackground(backgroundEl) {
+	console.log(type_name);
+	if (type_name === "tiny") {
+		backgroundEl.classList.add("tiny-background");
+	} else if (type_name === "angry") {
+		backgroundEl.classList.add("angry-background");
+	} else if (type_name === "backwards") {
+		backgroundEl.classList.add("backwards-background");
+	} else if (type_name === "excited") {
+		backgroundEl.classList.add("excited-background");
+	} else if (type_name === "blurry") {
+		backgroundEl.classList.add("blurry-background");
+	}
+}
+alterBackground(chatBox)
 // "Typing" section
 chatInput.addEventListener("keypress", function () {
 	socket.emit("typing");
