@@ -28,6 +28,10 @@ Chat.init(
     // selfGranted: DataTypes.BOOLEAN,
     message:{
       type: DataTypes.STRING
+    },
+    image:{
+      type: DataTypes.BLOB("long"),
+      defaultValue:null
     }
   },
   {

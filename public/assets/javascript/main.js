@@ -4,6 +4,7 @@ const socket = io('http://localhost:3000')
 const roomId = document.querySelector('.chat-room-title').getAttribute('data-id')
 const form = document.querySelector('.chat-form')
 
+// Get a Blob somehow...
 
 const {
     user_id,
@@ -18,8 +19,9 @@ socket.emit('joinRoom', {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
+    
     const message = chatInput.value
-    chatHistory(message, roomId)
+    chatHistory(message,'')
     socket.emit('chatMessage', message)
     // chatInput.value = ''
     // chatInput.focus()
@@ -48,17 +50,18 @@ socket.on('message', message => {
 
 //leave chat room
 socket.on('leaveRoom', user => {
-    document.querySelector(`#room-users li[data-id="${user.id}"`).remove()
+    // document.querySelector(`#room-users li[data-id="${user.id}"`).remove()
 })
 
 //post chat history
-async function chatHistory(message) {
+async function chatHistory(message,image) {
     let room_id = getRoomId()
     const response = await fetch("/api/chats", {
         method: "POST",
         body: JSON.stringify({
             room_id,
             user_id,
+            image,
             message
         }),
         headers: {
@@ -76,7 +79,7 @@ async function chatHistory(message) {
 if (window.performance) {
     let room_id = getRoomId()
     fetchChatHistory(room_id)
-    deleteOldHistory(room_id)
+    // deleteOldHistory(room_id)
 }
  function fetchChatHistory(room_id){
  fetch(`/api/chats/${room_id}`, {
@@ -88,22 +91,22 @@ if (window.performance) {
     return data.json()
 }).then(data => {
   console.log(data)
-  console.log(room_id)
+//   console.log(room_id)
     // let newData = data.filter(item => item.room_id === room_id)
     renderData(data)
 })
 }
 
-function deleteOldHistory(room_id){
-  fetch(`/api/chats/${room_id}`,{
-    method: "DELETE",
-    headers: {
-        "Content-Type": "application/json",
-    },
-  }).then(data=>{
-    console.log(data)
-  })
-}
+// function deleteOldHistory(room_id){
+//   fetch(`/api/chats/${room_id}`,{
+//     method: "DELETE",
+//     headers: {
+//         "Content-Type": "application/json",
+//     },
+//   }).then(data=>{
+//     console.log(data)
+//   })
+// }
 
 
 //get room id 
@@ -120,11 +123,19 @@ function getRoomId() {
 }
 
 //render data 
-function renderData(data) {
+ function renderData(data) {
+     console.log(data)
     data.map(data => {
+        
         const list = document.createElement('li')
+        const image = document.createElement('img')
+ 
+        image.setAttribute('class', 'image');
+        image.src=data.image
         list.textContent = data.message
         chatList.append(list)
+        chatList.append(image)
+    
     })
 }
 
@@ -160,23 +171,21 @@ function fileHandler(e) {
         //send only the first one
         file = files[0];
     }
-    console.log(files)
 }
 
 function sendFile() {
     if (file) {
         //read the file content and prepare to send it
         var reader = new FileReader();
-
+        
         reader.onload = function(e) {
             console.log('Sending file...');
             //get all content
             const base64 = this.result.replace(/.*base64,/, '');
-           
+            chatHistory("",base64)
         //    console.log(base64)
             socket.emit('image', base64);
-            //send the content via socket
-            //socket.emit('send-file', file.name, buffer);
+        
         };
         // readAsBinaryString
         reader.readAsDataURL(file);
@@ -189,10 +198,7 @@ let imageChunks = [];
 socket.on('image', image => {
     // create image with
     const img = new Image();
-    // change image type to whatever you use, or detect it in the backend 
-    // and send it if you support multiple extensions
-    imageChunks.push(image);
-    console.log(imageChunks)
+
     img.setAttribute('src' , `data:image/png;base64,${image}`);
     img.setAttribute('class', 'image');
     // Insert it into the DOM
@@ -200,6 +206,7 @@ socket.on('image', image => {
     chatList.append(img);
     
 });
+
 
 socket.on('sendImage',message=>{
     //console.log(message)
@@ -209,6 +216,7 @@ socket.on('sendImage',message=>{
 function renderImage(message){
     const img=document.createElement('img');
     img.className="image";
+    // chatHistory("",message)
     img.src=`data:image/png;base64, ${message} alt="Red dot"`;
     chatList.append(img);
 }

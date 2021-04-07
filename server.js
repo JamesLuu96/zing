@@ -16,7 +16,6 @@ const sharedsession = require("express-socket.io-session")
 const fs=require('fs')
 const {readFile}=require('fs')
 
-
 const {
     userJoin,
     getCurrentUser,
@@ -24,6 +23,7 @@ const {
     getRoomUsers,
     users
 } = require('./utils/users')
+
 
 const sess = {
     secret: 'fdsajki',
@@ -65,6 +65,7 @@ io.on('connection', socket => {
         socket.broadcast.to(data.roomId).emit('message', `${user.username} entered the room.`)
 
         socket.on('chatMessage', (message) => {
+        
             console.log(message, "this is new message")
             io.to(data.roomId).emit('message', message)
         })
@@ -81,6 +82,7 @@ io.on('connection', socket => {
             fs.writeFile(__dirname + '/public/assets/test.png', buffer, function(err, result) {
                 if(err) console.log('error', err);
               }); // fs.promises
+              
               io.to(data.roomId).emit('image', image.toString('base64'));
         });
  

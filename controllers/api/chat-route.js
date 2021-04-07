@@ -3,14 +3,18 @@ const sequelize = require("../../config/connection");
 const {Chat, User} = require("../../models");
 const withAuth = require("../../utils/auth");
 const dateFormat = require('dateformat');
-const {Op} = require('sequelize')
+var Buffer = require('buffer/').Buffer 
+
+// const {Op} = require('sequelize')
 // get all chat
 router.post("/", (req, res) => {
-    console.log(req.body, "hello")
+    console.log(req.body, "oops")
+    
     Chat.create({
             room_id: req.body.room_id,
             user_id: req.body.user_id,
             message: req.body.message,
+            image:req.body.image
         })
         .then((dbRoomData) => {
             res.json(dbRoomData)
@@ -23,24 +27,28 @@ router.post("/", (req, res) => {
 });
 
 //find chat
+
 router.get("/:id", withAuth, (req, res) => {
     Chat.findAll({
         where:{
             room_id:req.params.id
         },
+   
         include:[{
             model:User,
             attributes:["username"]
         }]
 })
-        .then((dbRoomData) => {
-            if (!dbRoomData) {
+        .then((dbChatData) => {
+            if (!dbChatData) {
                 res.status(404).json({
                     message: "No chat found with this room id"
                 });
                 return;
             }
-            res.json(dbRoomData);
+        console.log(dbChatData.map(data=>data.get({plain:true})))
+        res.json(dbChatData)
+        //  res.json(Buffer.from(dbChatData));
         })
         .catch((err) => {
             console.log(err);
@@ -66,6 +74,7 @@ router.delete("/:id", (req, res) => {
 				res.status(404).json({ message: "No user found with this id" });
 				return;
 			}
+         
 			res.json(dbUserData);
 		})
 		.catch((err) => {
