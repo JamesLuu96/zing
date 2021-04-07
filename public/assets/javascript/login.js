@@ -42,10 +42,10 @@ async function loginFormHandler(event) {
 			}).catch(err=>{
 				alert.textContent = "Please check your user name and password!!";
 				document.body.appendChild(alert);
+			
 			})
 	}
 }
 
-document
-	.querySelector("#login-tab")
+document.querySelector("#login-tab")
 	.addEventListener("submit", loginFormHandler);

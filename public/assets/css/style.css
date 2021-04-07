@@ -15,6 +15,7 @@ h1.navbar-brand {
 nav a {
 	font-size: 24px;
 	color: white;
+	transition: color .3s ease-in-out;
 }
 
 .room-list {
@@ -25,9 +26,13 @@ nav a {
 	border-left: 1px solid #e2e2e2;
 }
 
+.list-group-item{
+	transition: background-color .3s ease-in-out;
+}
 .list-group-item:hover {
 	background-color: #fce9e9;
 	border-left: 4px solid #eb484d;
+	
 }
 
 .column-title {
@@ -46,10 +51,12 @@ h4 {
 .small-link {
 	color: #4357ad;
 	font-size: 20px;
+	
 }
 
 .small-link:hover {
-	text-decoration: underline;
+	text-decoration: none;
+	filter: brightness(50%)
 }
 
 #logout{

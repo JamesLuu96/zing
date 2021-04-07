@@ -1,23 +1,11 @@
-<div class="row p-2 justify-content-center">
-  <div class="col-5 m-0 p-0">
-    <form id="signup-tab" class="form signup-tab signup-form">
-      <h2 class="display-5 text-center p-5"> Nice to meet you! </h2>
-      <div class="row mb-3" id="holder">
-        <label for="username-signup" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username-signup">
-      </div>
-      <div class="row mb-3" id="holder">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password-signup">
-      </div>
-      <div class="row mb-3">
-        <button type="submit" class="btn btn input-block-level form-control btn-primary p-2 m-0">signup</button>
-      </div>
-        <a href="/login" class="nav-link text-center small-link" aria-current="page">or
-          login</a>
-    </form>
-  </div>
-</div>
+<form id="signup-tab" class="box">
+  <h1> Welcome! </h1>
+  <input type="text" name placeholder="Username" id="username-signup" autocomplete="off">
+  <input type="password" name placeholder="Password" id="password-signup">
+  <input type="submit" name value="signup"></input>
+  <a href="/login" class="nav-link text-center small-link">or login</a>
+</form>
+
 
 <link rel="stylesheet" href="/assets/css/login.css">
 

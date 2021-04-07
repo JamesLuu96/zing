@@ -8,6 +8,8 @@ const form = document.querySelector('.chat-form')
 const feedback = document.getElementById('feedback')
 const type_name = document.querySelector(".chat-room-type").textContent;
 
+
+var x = document.getElementById("myAudio"); 
 function change(input){
 	input.classList.add('test')
 }
@@ -96,6 +98,7 @@ socket.on("joinRoom", (user) => {
 	list.setAttribute("data-id", user.id);
 	list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`;
 	document.querySelector("#room-users ul").append(list);
+	x.play(); 
 });
 
 socket.on("currentUsers", (allUsers) => {
