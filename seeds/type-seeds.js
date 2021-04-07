@@ -2,6 +2,9 @@ const { Type } = require("../models");
 
 const userdata = [
 	{
+		type_name: "default"
+	},
+	{
 		type_name: "blurry",
 	},
 	{
