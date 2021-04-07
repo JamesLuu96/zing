@@ -6,7 +6,12 @@ async function signupFormHandler(event) {
 	const username = document.querySelector("#username-signup").value.trim();
 	
 	const password = document.querySelector("#password-signup").value.trim();
-
+	
+	let alert = document.createElement("p");
+	alert.className = "error-input";
+	
+  
+	
 	if (username  && password) {
 		const response = await fetch("/api/users", {
 			method: "post",
@@ -29,6 +34,11 @@ async function signupFormHandler(event) {
 				})
 			)
 			document.location.replace("/");
+			
+		}).catch(err=>{
+			// alert.textContent = "User already exsist please change your user name!!!";
+			// document.body.appendChild(alert);
+			
 		})
 	}
 }

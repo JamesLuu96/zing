@@ -6,16 +6,17 @@
       <form id="chat-input" class="p-4">
         <div class="row align-items-end">
           <div class="col" id="holder">
-            <label for="room-name">Room name</label>
-            <input id="room-name" class="form-control pt-3" type="text" placeholder="Enter room name">
+
+            <input id="room-name" class="form-control text-center" type="text" placeholder="Enter room name" required>
           </div>
           <div class="col" id="holder">
-            <label for="room-type">Room type</label>
-            <select id="room-type" class="form-control pt-3">
-                  {{#each types}}
-       <option value="{{id}}">{{type_name}}</option>
-      {{/each}}
-            
+
+            <select id="room-type" class="form-control text-center">
+              <option selected="selected">Insert room type</option>
+              {{#each types}}
+              <option value="{{id}}">{{type_name}}</option>
+              {{/each}}
+
             </select>
           </div>
           <div class="col">
@@ -25,20 +26,20 @@
       </form>
       <!-- list existing rooms -->
       <div class="room-list p-4">
-      {{#each rooms}}
+        {{#each rooms}}
         {{> room-info }}
-      {{/each}}
+        {{/each}}
       </div>
     </div>
     <!-- Left Bar ENDS -->
-    
+
     <!-- Sidenav of online users -->
     <div class="col p-4 d-none d-md-block sidenav">
       <div>
         <h5>Online Users</h4>
       </div>
-     {{#each rooms}}
-        {{> online-user }}
+      {{#each rooms}}
+      {{> online-user }}
       {{/each}}
     </div>
   </div>
@@ -47,4 +48,3 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="/assets/javascript/homepage.js"></script>
 <script src="/assets/javascript/add-room.js"></script>
-

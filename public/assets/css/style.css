@@ -3,7 +3,8 @@ body {
 }
 
 nav {
-	background-color: #eb484d;
+	background-color: #eb484de0;
+  line-height: 0;
 }
 
 h1.navbar-brand {
@@ -59,6 +60,9 @@ h4 {
 	text-decoration: underline;
 }
 
+#logout{
+	background-color: transparent;
+}
 #login:hover,
 #logout:hover {
 	color: white;
@@ -88,11 +92,11 @@ h4 {
 }
 
 .btn {
-	background-color: #4357ad;
+	background-color: #4356adda;
 	color: white;
 	font-size: 24px;
 	height: 60px;
-	padding: 0 16px;
+	padding: 0 20px;
 }
 
 .btn:hover {
@@ -117,4 +121,9 @@ label {
 }
 
 
-
+.error-input {
+	text-align: center;
+	vertical-align:center;
+	margin-top:-300px;
+	color:red;
+}
