@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 
 // get all rooms
 router.get("/", (req, res) => {
-	console.log("======================");
+	// console.log("======================");
 	Room.findAll({
 		attributes: ["id", "room_name", "type_id", "user_id", "created_at"],
 		include: [

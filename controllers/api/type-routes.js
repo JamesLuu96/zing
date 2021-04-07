@@ -5,7 +5,7 @@ const withAuth = require("../../utils/auth");
 
 // get all types
 router.get("/", (req, res) => {
-	console.log("======================");
+	// console.log("======================");
 	Type.findAll({
 		attributes: ["id", "type_name"],
 		include: [

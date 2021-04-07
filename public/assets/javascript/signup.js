@@ -26,7 +26,7 @@ async function signupFormHandler(event) {
 			return data.json()
 		})
 		.then((data)=>{
-			console.log(data)
+			// console.log(data)
 			sessionStorage.setItem(
 				"userInfo",
 				JSON.stringify({

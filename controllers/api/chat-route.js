@@ -6,7 +6,7 @@ const dateFormat = require('dateformat');
 const {Op} = require('sequelize')
 // get all chat
 router.post("/", (req, res) => {
-    console.log(req.body, "hello")
+    // console.log(req.body, "hello")
     Chat.create({
             room_id: req.body.room_id,
             user_id: req.body.user_id,

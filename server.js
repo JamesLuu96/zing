@@ -79,6 +79,14 @@ io.on("connection", (socket) => {
 		socket.on("typing", function (data) {
 			socket.broadcast.emit("typing", user.username);
 		});
+
+		socket.on("deleteRoom", (roomId)=>{
+			io.to(roomId).emit('leaveRoom')
+		})
+
+		socket.on("refreshPage", ()=>{
+			io.to("lobby").emit('refreshPage')
+		})
 		
 		io.to("lobby").emit('renderRooms', getAllUsersInRoom())
 		io.to("lobby").emit('getUsers', getUsers())
@@ -89,7 +97,6 @@ io.on("connection", (socket) => {
             io.to(data.roomId).emit('leaveRoom', user)
 			io.to("lobby").emit('renderRooms', getAllUsersInRoom())
 			io.to("lobby").emit('getUsers', getUsers())
-            console.log('left')
         })
     })
 })
