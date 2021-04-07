@@ -78,9 +78,6 @@ io.on('connection', socket => {
             io.to(data.roomId).emit('leaveRoom', user)
             console.log('left')
         })
-
-
-        
     })
 })
 

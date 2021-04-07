@@ -6,6 +6,10 @@ const roomId = document.querySelector('.chat-room-title').getAttribute('data-id'
 const form = document.querySelector('.chat-form')
 const feedback = document.getElementById('feedback')
 
+function change(input){
+	input.classList.add('test')
+}
+
 
 const {
     user_id,
@@ -41,6 +45,7 @@ function outputMessage(message) {
 
     const list = document.createElement('li')
     list.textContent = message
+	change(list)
     chatList.append(list)
     feedback.innerHTML = "";
 }
