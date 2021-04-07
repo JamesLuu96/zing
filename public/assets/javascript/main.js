@@ -66,7 +66,14 @@ chatInput.addEventListener("keypress", function () {
 });
 
 socket.on("typing", function (data) {
-	feedback.innerHTML = "<p><em>" + data + " is typing a message...</em></p>";
+	feedback.innerHTML = `<div class="chat-bubble">
+                    <div class="typing">
+                         <div class="dot"></div>
+                         <div class="dot"></div>
+                         <div class="dot"></div>
+                         <span class="writing"></span>
+                    </div>
+               </div><p><em> ${data} is typing</em></p>`;
 });
 
 function outputMessage(message) {
@@ -96,7 +103,10 @@ socket.on("joinRoom", (user) => {
 	list.setAttribute("data-id", user.id);
 	list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`;
 	document.querySelector("#room-users ul").append(list);
+
 });
+
+
 
 socket.on("currentUsers", (allUsers) => {
 	console.log(allUsers);
@@ -136,3 +146,4 @@ function renderData(data) {
 		chatList.append(list);
 	});
 }
+

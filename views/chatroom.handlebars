@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="/assets/css/chatroom1.css">
 
-
 <div class="navbar navbar-expand-lg d-flex justify-content-center mb-4" id="subnav">
-  <div class="col pl-5">
-     <h1 class="chat-room-title" data-id="{{room.id}}">{{room.room_name}}</h1>
+     <div class="col pl-5">
+          <h1 class="chat-room-title" data-id="{{room.id}}">{{room.room_name}}</h1>
      </div>
-    <div class="col pr-5">
-     <p class="chat-room-owner text-right"> <span class="chat-room-type">{{room.type.type_name}}</span> room created by {{room.user.username}}</p>
+     <div class="col pr-5">
+          <p class="chat-room-owner text-right"> <span class="chat-room-type">{{room.type.type_name}}</span> room
+               created by {{room.user.username}}</p>
      </div>
      {{#if (check_room room.user.username myUser)}}<button class="trash">Delete Room</button>{{/if}}
 </div>
@@ -19,41 +19,46 @@
           </ul>
      </div>
      <div class="col chat-wrapper p-0">
-     
-               <div id="chatContainer" class="row m-0 p-0">
-                    <div class="col-12" id="chatBox">
-                         <ul id="chatList" style="list-style-type:none">
 
-                              <li></li>
-                         </ul>
+          <div id="chatContainer" class="row m-0 p-0">
+               <div class="col-12" id="chatBox">
+                    <ul id="chatList" style="list-style-type:none">
+
+                         <li></li>
+                    </ul>
+               </div>
+
+          </div>
+
+          <div class="ml-4 mr-4 mb-0">
+
+               <div id="feedback">
+               </div>
+              
+          </div>
+          <form class="chat-form">
+               <div class="input-group d-flex p-4 m-0">
+                    <input class="flex-grow-1" type="text" id="chatInput" placeholder="Write a message..."
+                         aria-label="Recipient's username" aria-describedby="button-addon2" required autocomplete="off">
+
+                    <div class="input-group-append">
+                         <button type="submit" class="send-button"><i
+                                   class="fas fa-arrow-circle-right send-icon"></i></button>
                     </div>
-            
-          </div>
-      
-               <div class="ml-4 mr-4 mb-0">
-                    <div id="feedback"></div>
-                    <form class="chat-form">
-                      <div class="input-group d-flex p-4 m-0">
-                         <input class="flex-grow-1" type="text" id="chatInput" placeholder="Write a message..."
-                              aria-label="Recipient's username" aria-describedby="button-addon2" required
-                              autocomplete="off">
-                
-                      <div class="input-group-append">
-                         <button type="submit" class="btn"><i class="fas fa-arrow-circle-right"></i></button>
-                         </div>
-                         </div>
-                    </form>
-                    {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
-           
-          </div>
+               </div>
+          </form>
+          {{!-- <button class="btn btn-outline-secondary" type="button" id="send-chat">Send</button> --}}
+
      </div>
 </div>
+<div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
-     integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="/assets/javascript/main.js"></script>
-<script src="/assets/javascript/logout.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+          integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+     <script src="/socket.io/socket.io.js"></script>
+     <script src="/assets/javascript/main.js"></script>
+     <script src="/assets/javascript/logout.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
