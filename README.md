@@ -40,8 +40,9 @@ This Licence belongs to Apache
 ```npm run just```  
 
 ## screenshot
-![project image]('./public/assets/images/zing.png')
-![project image]('./public/assets/images/chat.png')
+![zing](https://user-images.githubusercontent.com/73629983/114060350-e9af7200-985a-11eb-99b2-0af3d081f204.png)
+![chat](https://user-images.githubusercontent.com/73629983/114060402-f5029d80-985a-11eb-9b6d-7c40ac2a5e99.png)
+
 ## Questions
 If you have any question about the repo, open an issue or contact me directly at [JamesLuu96](https://github.com/JamesLuu96/)
 
