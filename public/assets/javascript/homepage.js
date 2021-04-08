@@ -58,7 +58,7 @@ async function newRoomHandler(event) {
 	}
 }
 
-const deleteEl = document.querySelector('.trash')
+const deleteEl = document.querySelectorAll('.trash')
 
 
 async function deleteRoom(event){
@@ -77,7 +77,9 @@ async function deleteRoom(event){
 }
 
 if(deleteEl){
-    deleteEl.addEventListener('click', deleteRoom)
+    deleteEl.forEach(room=>{
+        room.addEventListener('click', deleteRoom)
+    })
 }
 
 document
