@@ -197,3 +197,10 @@ li.blurry {
 	  background-color: #B5D9CB; 
 	}
   }
+li.glowing {
+     text-shadow: 0 0 7px rgba(255, 0, 255, 0.5);
+}
+
+li.wide {
+     letter-spacing: 10px;
+}

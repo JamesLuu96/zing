@@ -41,7 +41,12 @@ function alterMessage(chatEl) {
 		chatEl.classList.add("blurry");
 	} else if (type_name === "dark") {
 		chatEl.classList.add("dark");
+	} else if (type_name === "glowing") {
+		chatEl.classList.add("glowing");
+	}else if (type_name === "wide") {
+          chatEl.classList.add("wide");
 	}
+     
 }
 function alterBackground(backgroundEl) {
 	// console.log(type_name);
