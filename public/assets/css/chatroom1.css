@@ -53,6 +53,7 @@ ul {
 	overflow-y: scroll;
 	height:60vh;
 	border-bottom: 1px solid #d3d3d3;
+	word-break:break-all;
 }
 .send-icon{
 color:#4356adc9;
@@ -72,8 +73,8 @@ color:#4356adc9;
 #chatList li:nth-child(odd),
 #chatList li:nth-child(even) {
 	padding: 10px;
-	word-wrap: break-word;
 	border-radius: 12px;
+	
 }
 #chatList .chatName {
 	margin: 0;
