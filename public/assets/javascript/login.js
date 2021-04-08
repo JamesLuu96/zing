@@ -15,7 +15,10 @@ async function loginFormHandler(event) {
 	alert.className="fas fa-exclamation-circle errror-icon";
 	const username = document.querySelector("#username").value.trim();
 	const password = document.querySelector("#password-login").value;
-
+	username.addEventListener('click',()=>{
+		
+	})
+	
 	if (username && password) {
 		const response = await fetch("/api/users/login", {
 			method: "post",

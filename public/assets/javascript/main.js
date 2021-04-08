@@ -2,6 +2,7 @@ const chatList = document.querySelector("#chatList");
 const chatInput = document.querySelector("#chatInput");
 const chatBox = document.querySelector("#chatBox");
 const socket = io();
+
 const roomId = document
 	.querySelector(".chat-room-title")
 	.getAttribute("data-id");
@@ -80,7 +81,7 @@ function outputMessage(message) {
 	const list = document.createElement("li");
 	const divEl = document.createElement("div");
 	const name = document.createElement("p");
-	name.textContent = `${message.user}: `;
+	name.textContent = `${message.user}: ${new Date().getHours()} :$git {new Date().getMinutes()} `;
 	name.classList.add("chatName");
 	list.textContent = message.message;
 	change(list);
