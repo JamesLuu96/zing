@@ -93,7 +93,7 @@ io.on("connection", (socket) => {
 
         socket.on('disconnect', () => {
             userLeave(socket.id)
-            io.to(data.roomId).emit('message', {user: botName, message:' left the room'})
+            io.to(data.roomId).emit('message', {user: botName, message: `${user.username} left the room`})
             io.to(data.roomId).emit('leaveRoom', user)
 			io.to("lobby").emit('renderRooms', getAllUsersInRoom())
 			io.to("lobby").emit('getUsers', getUsers())
