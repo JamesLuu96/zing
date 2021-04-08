@@ -14,6 +14,13 @@ body {
 	border-bottom: 1px solid #e2e2e2;
 }
 
+.chat-room-title{
+	margin-left: 27rem;
+	font-weight: 200;
+}
+.room-creator p{
+	margin-right:5rem
+}
 ul {
 	padding: 0;
 }
@@ -124,6 +131,7 @@ li.blurry {
 	font-size: 18px;
 	font-weight: 500;
 }
+
 
 .dark {
 	color: black;
