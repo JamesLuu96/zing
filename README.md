@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 ## Description
 
-Zing Chat application is powered by Socket.IO. It is a web application that allows multiple users to have a group chat which allows them to communicate and share ideas.
+Zing Chat application is powered by Socket.IO. It is a web application that allows multiple users to create their own room and have a group chat to communicate and share ideas.
 ## Table of Content
 * [Installation](#Installation)
 * [Usage](#Usage)
