@@ -8,7 +8,7 @@ const withAuth = require("../utils/auth");
 // get all rooms for homepage
 router.get("/", withAuth, (req, res) => {
 	let roomsData;
-	console.log("======================");
+	// console.log("======================");
 	Room.findAll({
 		attributes: ["id", "room_name", "type_id", "user_id", "created_at"],
 		include: [
@@ -77,7 +77,7 @@ router.get("/:id", withAuth, (req, res) => {
 				return;
 			}
 			const room = dbRoomData.get({ plain: true });
-			console.log(room);
+			// console.log(room);
 			res.render("chatroom", {
 				room,
 				loggedIn: req.session.loggedIn,

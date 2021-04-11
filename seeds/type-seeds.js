@@ -2,7 +2,7 @@ const { Type } = require("../models");
 
 const userdata = [
 	{
-		type_name: "default"
+		type_name: "default",
 	},
 	{
 		type_name: "blurry",
@@ -18,6 +18,15 @@ const userdata = [
 	},
 	{
 		type_name: "backwards",
+	},
+	{
+		type_name: "dark",
+	},
+     {
+		type_name: "glowing",
+	},
+     {
+		type_name: "wide",
 	},
 ];
 

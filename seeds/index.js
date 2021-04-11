@@ -6,13 +6,13 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log('--------------');
+  // console.log('--------------');
   await seedUsers();
-  console.log('--------------');
+  // console.log('--------------');
   await seedType();
-  console.log('--------------');
+  // console.log('--------------');
   await seedRooms();
-  console.log('--------------');
+  // console.log('--------------');
 
   process.exit(0);
 };

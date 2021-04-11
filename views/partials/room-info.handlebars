@@ -2,8 +2,10 @@
   {{#if (check_room user.username @root.myUser)}}<i class="trash fas fa-trash-alt" data-id="{{id}}"></i>{{/if}}
   <a href="{{id}}" data-id="{{id}}" class="list-group-item list-group-item-action pl-4 m-0">
     <div class="d-flex justify-content-between">
-      <div>
-        <h3 class="chat-room-title">{{room_name}}</h3>
+      <div class="col align-text-bottom">
+        <h3 class="chat-room-title align-text-bottom">{{room_name}} 
+          <span class="badge room-badge pl-2 pr-2 pb-1 m-1 align-middle">{{type.type_name}}</span>
+          </h3>
         <p class="lead mb-2">{{user.username}}</p>
       </div>
       <div>
@@ -15,6 +17,6 @@
     </div>
   </a>
 </div>
-{{#if (check_room user.username @root.myUser)}}
+{{!-- {{#if (check_room user.username @root.myUser)}}
 <script src="/assets/javascript/delete-room.js"></script>
-{{/if}}
+{{/if}} --}}

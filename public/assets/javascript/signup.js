@@ -1,17 +1,18 @@
 
-
+	
+	let alert = document.createElement("i");
 async function signupFormHandler(event) {
 	event.preventDefault();
 
 	const username = document.querySelector("#username-signup").value.trim();
-	
 	const password = document.querySelector("#password-signup").value.trim();
+
+	alert.className = "fas fa-exclamation-circle errror-icon";
+	// alert.setAttribute('data-bs-toggle','tooltip')
+	// alert.setAttribute('data-bs-placement','top')
+	// alert.setAttribute('title','test')
 	
-	let alert = document.createElement("p");
-	alert.className = "error-input";
-	
-  
-	
+
 	if (username  && password) {
 		const response = await fetch("/api/users", {
 			method: "post",
@@ -25,7 +26,7 @@ async function signupFormHandler(event) {
 			return data.json()
 		})
 		.then((data)=>{
-			console.log(data)
+			// console.log(data)
 			sessionStorage.setItem(
 				"userInfo",
 				JSON.stringify({
@@ -36,13 +37,12 @@ async function signupFormHandler(event) {
 			document.location.replace("/");
 			
 		}).catch(err=>{
-			// alert.textContent = "User already exsist please change your user name!!!";
-			// document.body.appendChild(alert);
+			document.body.appendChild(alert);
 			
 		})
 	}
 }
 
-document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);
+document.querySelector("#signup-tab").addEventListener("submit", signupFormHandler);
 
 

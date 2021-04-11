@@ -1,6 +1,6 @@
 <div class="container-fluid m-0 p-0">
 
-  <div class="row m-0">
+  <div class="row m-0 h-100 ">
     <!-- Left Bar -->
     <div class="col-md-8 p-0">
       <!-- create new room form -->
@@ -10,7 +10,6 @@
             <input id="room-name" class="form-control" type="text" placeholder="Enter room name" required>
           </div>
           <div class="col" id="holder">
-
             <select id="room-type" class="form-control text-center">
               <option selected="selected">Insert room type</option>
               {{#each types}}
@@ -46,4 +45,3 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/assets/javascript/homepage.js"></script>
-<script src="/assets/javascript/add-room.js"></script>

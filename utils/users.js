@@ -1,12 +1,14 @@
+
 // const users = [{ id:7, username:"username", room:2 },{ id:7, username:"username", room:2 },{ id:7, username:"username", room:2 },{ id:7, username:"username", room:1 }];
 const users = [];
-console.log(users);
+// console.log(users);
 // Join user to chat
+
 
 function userJoin(id, username, room) {
 	const user = { id, username, room };
 	users.push(user);
-	console.table(users)
+	// console.table(users)
 	return user;
 }
 
@@ -42,7 +44,7 @@ function getAllUsersInRoom(){
 	for(key in userCounts){
 		userArray.push({roomId: key, onlineUsers: userCounts[key]})
 	}
-	console.log(userArray)
+	// console.log(userArray)
 	return userArray
 }
 
@@ -58,5 +60,6 @@ module.exports = {
 	getRoomUsers,
 	getUsersInRoom,
 	getAllUsersInRoom,
-	getUsers
+	getUsers,
+
 };

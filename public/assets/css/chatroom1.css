@@ -1,95 +1,104 @@
-
-body{
-	background-color: #f4f5fb;	
+body {
+	background-color: #f4f5fb;
 	overflow-x: hidden;
+	overflow: hidden;
 }
 .wrapper {
-	
 	height: 100vh;
+	width: 80%;
+	margin: 0 auto;
 }
+
 #subnav {
 	min-width: 100%;
-	/* color: white; */
+	border-bottom: 1px solid #e2e2e2;
 }
-#room-users {
-	margin: 3.2% 0 0 2.5%;
-	
+
+.chat-room-title{
+	margin-left: 27rem;
+	font-weight: 200;
+}
+.room-creator p{
+	margin-right:5rem
+}
+ul {
+	padding: 0;
 }
 #room-users li {
 	border-bottom: 2px solid #fff;
 	padding: 1rem;
 	list-style: none;
 }
-.current-users-icon{
-	font-size:1.5rem;
-}
-#feedback {
-	height: 30px;
-	margin-top: -28px;
-}
-.chat-form {
-	width: 100%;
-	height: 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.chat-form button{
-position: absolute;
-right:1px;
-top:2px;
-border:none;
-background-color:#fff;
-}
-.chat-form button i {
-	margin: 8px 10px 0 0;
-	
-}
 
-#chatBox {
-	background-color: #fff;
-	height: 70vh;
-	overflow-y: scroll;
-	
-	
-}
-#chat-input {
-	box-shadow: 0 0 2px 0 12px #edeef8;
-	width: 100%;
-	border-bottom: 1px solid #e2e2e2;
+.current-users-icon {
+	font-size: 1.2rem;
+	color:#189c35;
 }
 
 #chatInput {
-	margin-top: -4rem;
-	padding: 10px;
-	width:150%;
-	border:none;
+	border: none;
 	outline: none;
 }
-#chatList li:nth-child(odd),#chatList li:nth-child(even){
-	padding:10px;
-	word-wrap:break-word;
+.chat-form{
+	margin-top:-20px;
+}
+.chat-form button {
+	height: 100%;
+	background-color: transparent;
+	border: none;
+}
+
+.chat-wrapper {
+	background-color: #fff;
+	border: 1px solid #d3d3d3;
+	height: 70vh;
+}
+#chatContainer {
+	height: 62vh;
+}
+#chatBox {
+	overflow-y: scroll;
+	height:60vh;
+	border-bottom: 1px solid #d3d3d3;
+	word-break:break-all;
+}
+.send-icon{
+color:#4356adc9;
+	font-size: 30px;
+}
+
+.send-icon:hover{
+	filter:brightness(50%)
+}
+#feedback p{
+	margin-top:-45px;
+	margin-left:4rem;
+	color:#6CAD96;
+	font-size: 14px;;
+	
+}
+#chatList li:nth-child(odd),
+#chatList li:nth-child(even) {
+	padding: 10px;
 	border-radius: 12px;
+	
 }
 #chatList .chatName {
 	margin: 0;
 }
-#chatList li.theirs{
-	background-color:#f4f4f4;
+#chatList li.theirs {
+	background-color: #f4f4f4;
 	display: inline-block;
 	margin-right: 150px;
-	
 }
-.your-message{
+.your-message {
 	text-align: right;
 }
-#chatList li.yours{
-	background-color:#4356adc9;
+#chatList li.yours {
+	background-color: #4356adc9;
 	display: inline-block;
-	color:#fff;
-	
+	color: #fff;
 }
-
 
 li.tiny {
 	font-size: 8px;
@@ -118,32 +127,91 @@ li.blurry {
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.chat-room-type-and-name {
-
-text-align: right;
-margin-right:6%;
-padding:10px;
-font-weight: 600;
-}
-
-.chat-wrapper{
-
+.chat-room-owner {
+	font-size: 18px;
+	font-weight: 500;
 }
 
 
-.tiny-background{
-
-
-}
-.backwards-background{
-	
+.dark {
+	color: black;
+	background-color: black;
 }
 
-.excited-background{
-
+.chat-wrapper {
 }
-.angry-background{
 
+.tiny-background {
+}
+.backwards-background {
+}
+
+.excited-background {
+}
+.angry-background {
+}
+.blurry-background {
+}
+
+.chat-bubble {
+	padding:16px 28px;
+    height:10px;
+	border-radius: 20px;
+	border-bottom-left-radius: 2px;
+	display:inline-block;
+	position: absolute;
+	top:78%;
+	left:3%;
+	padding:18px 40px;
+  }
+  .typing {
+	align-items: center;
+	display: flex;
+	height: 17px;
+  }
+  .typing .dot {
+	animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+	border-radius: 50%;
+	height: 4px;
+	margin-right: 4px;
+	vertical-align: middle;
+	width: 3px;
+
+	display: inline-block;
+  }
+  .typing .dot:nth-child(1) {
+	animation-delay: 200ms;
+  }
+  .typing .dot:nth-child(2) {
+	animation-delay: 300ms;
+  }
+  .typing .dot:nth-child(3) {
+	animation-delay: 400ms;
+  }
+  .typing .dot:last-child {
+	margin-right: 0;
+  }
+  
+  @keyframes mercuryTypingAnimation {
+	0% {
+	  transform: translateY(0px);
+	  background-color:#6CAD96; 
+	}
+	28% {
+	  transform: translateY(-7px);
+	  background-color:#9ECAB9;
+	}
+	44% {
+	  transform: translateY(0px);
+	  background-color: #B5D9CB; 
+	}
+  }
+li.glowing {
+     text-shadow: 0 0 7px rgba(255, 0, 255, 0.5);
+}
+
+li.wide {
+     letter-spacing: 10px;
 }
 .blurry-background{
 	

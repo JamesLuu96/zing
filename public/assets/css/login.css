@@ -5,7 +5,7 @@ body{
     background: #dbdee0;
   }
   .box{
-    padding: 40px;
+    padding: 40px 80px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,6 +14,7 @@ body{
     border-radius: 5px;
     text-align: center;
   }
+  
   .box h1{
     color: rgb(5, 5, 5);
     font-weight: 500;
@@ -32,9 +33,18 @@ body{
     border-radius: 24px;
     transition: 0.25s;
   }
+  .errror-icon{
+    display: block;
+    margin: 15% 0 0 16%;
+    text-align: center;
+    color:red;
+    
+  }
+  
   .box input[type = "text"]:focus,.box input[type = "password"]:focus{
     width: 280px;
     border-color: #2ecc71;
+    background-color: #e6e6e6;
   }
   .box input[type = "submit"]{
     border:0;
@@ -52,5 +62,10 @@ body{
   }
   .box input[type = "submit"]:hover{
     background: #2ecc71;
+    color:#fff;
+  }
+  
+  .test{
+    background-color: #555;
   }
   
