@@ -5,7 +5,7 @@ const socket = io();
 const roomId = document
 	.querySelector(".chat-room-title")
 	.getAttribute("data-id");
-// console.log(roomId);
+
 const form = document.querySelector(".chat-form");
 const feedback = document.getElementById("feedback");
 const type_name = document.querySelector(".chat-room-type").textContent;
@@ -51,7 +51,6 @@ function alterMessage(chatEl) {
      
 }
 function alterBackground(backgroundEl) {
-	// console.log(type_name);
 	if (type_name === "tiny") {
 		backgroundEl.classList.add("tiny-background");
 	} else if (type_name === "angry") {
@@ -117,7 +116,6 @@ socket.on("joinRoom", (user) => {
 });
 
 socket.on("currentUsers", (allUsers) => {
-	// console.log(allUsers);
 	allUsers.forEach((user) => {
 		const list = document.createElement("li");
 		list.setAttribute("data-id", user.id);
