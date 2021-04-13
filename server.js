@@ -23,6 +23,12 @@ const {
 	getAllUsersInRoom,
 	getUsers,
 } = require("./utils/users");
+const {
+    addComment,
+    deleteComment,
+    deleteAllComments,
+    findComments
+} = require("./utils/comments")
 
 const sess = {
 	secret: "fdsajki",
@@ -57,6 +63,11 @@ const botName = "zingBot"
 
 // socket.handshake.session
 io.on("connection", (socket) => {
+	socket.on('getComments', (roomId)=>{
+		findComments(roomId).forEach(comment=>{
+			io.emit('message', {user: comment.username, message: comment.text})
+		})
+	})
 	socket.on("joinRoom", (data) => {
 		socket.join(data.roomId);
 		socket.emit("currentUsers", getUsersInRoom(data.roomId));
@@ -70,10 +81,8 @@ io.on("connection", (socket) => {
         socket.broadcast.to(data.roomId).emit('message', {user:botName, message:`${user.username} entered the room`})
 		
         socket.on('chatMessage', (message) => {
-		
+			addComment(user.username, data.roomId, message)
 			io.to(data.roomId).emit('message', {user: user.username, message})
-			
-			
         })
 		
 		socket.on("typing", function (data) {
@@ -81,6 +90,7 @@ io.on("connection", (socket) => {
 		});
 
 		socket.on("deleteRoom", (roomId)=>{
+			deleteAllComments(roomId)
 			io.to(roomId).emit('leaveRoomFromDelete')
 		})
 

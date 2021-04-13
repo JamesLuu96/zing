@@ -14,8 +14,10 @@ function change(input) {
 	input.classList.add("test");
 }
 
+
 const { user_id, username } = JSON.parse(sessionStorage.getItem("userInfo"));
 
+socket.emit('getComments', roomId)
 socket.emit("joinRoom", {
 	roomId,
 	username,
@@ -112,10 +114,7 @@ socket.on("joinRoom", (user) => {
 	list.setAttribute("data-id", user.id);
 	list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`;
 	document.querySelector("#room-users ul").append(list);
-
 });
-
-
 
 socket.on("currentUsers", (allUsers) => {
 	// console.log(allUsers);
@@ -125,6 +124,11 @@ socket.on("currentUsers", (allUsers) => {
 		list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${user.username}`;
 		document.querySelector("#room-users ul").append(list);
 	});
+	// Adds user to page
+	const list = document.createElement("li");
+	list.setAttribute("data-id", user_id);
+	list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${username}`;
+	document.querySelector("#room-users ul").append(list);
 });
 
 socket.on("message", (message) => {
@@ -139,11 +143,7 @@ socket.on("leaveRoom", (user) => {
 
 //post chat history
 
-// Adds user to page
-const list = document.createElement("li");
-list.setAttribute("data-id", user_id);
-list.innerHTML = `<i class="far fa-user pull-right mr-2 chat-text" id=""></i>${username}`;
-document.querySelector("#room-users ul").append(list);
+
 
 //fetch and render the data when the page reloads
 
